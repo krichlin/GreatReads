@@ -32,4 +32,25 @@ api = Api(app)
 bcrypt = Bcrypt(app)
 
 # Instantiate CORS
-CORS(app)
+CORS(app, resources={r"/api/*": {"origins": "*"}})
+
+@app.route("/")
+def helloWorld():
+  return "Hello, Cross-origin world!"
+
+# @app.route("/")
+# @cross_origin()
+# def howdy():
+#   return "Howdy partner!"
+
+@app.route("/api/v1/users")
+def list_users():
+  return "user example"
+
+# @app.route("/")
+# @cross_origin()  # Has a problem with this line
+# def hiWorld():
+#   return "Hi, Cross origin world!"
+
+# To Enable CORS Logging Do this:
+# logging.getLogger('flask_cors').level = logging.DEBUG
