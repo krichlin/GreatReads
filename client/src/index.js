@@ -4,8 +4,7 @@ import React from "react";
 import { ReactDOM, createRoot } from "react-dom/client";
 // import ReactDOM from 'react-dom/client';
 // import {BrowserRouter as Router} from 'react-router-dom';  
-import { 
-    //BrowserRouter as Router, 
+import { BrowserRouter as Router, 
     RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import App from "./components/App";
@@ -23,7 +22,11 @@ const router = createBrowserRouter([
 const container = document.getElementById("root");
 const root = createRoot(container);
 // root.render(<RouterProvider router={router}/>);
-root.render(<App />);
+root.render(
+    <Router>
+        <App />
+    </Router>
+);
 
 
 // ReactDOM.render(
