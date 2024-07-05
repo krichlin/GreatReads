@@ -1,10 +1,12 @@
 // Login.js
 
+import NavBar from "../NavBar"
+
 function Login() {
     return (
       <>
         <header>
-          {/* Save space for NavBar */}
+          <NavBar />
         </header>
         <main>
           <h1>Login</h1>
