@@ -1,18 +1,18 @@
-// /src/components/pages/Search.js
+// /src/components/pages/MyLibrary.js
 
 import NavBar from "../NavBar"
 
-function Search() {
+function MyLibrary() {
     return (
       <>
         <header>
           <NavBar />
         </header>
         <main>
-          <h1>Search for Books:</h1>
+          <h1>Woah, Look at My Library full of Books!</h1>
         </main>
       </>
     );
   };
   
-  export default Search;
+  export default MyLibrary;

@@ -2,19 +2,19 @@
     "users": [
         {
             "id": 1,
-            "name": "George Orwell"
+            "name": "Frodo Baggins"
         }, 
         {
             "id": 2,
-            "name": "Zitkala-Sa"
+            "name": "Roland Deschain"
         }, 
         {
             "id": 3,
-            "name": "Ted Chiang"
+            "name": "Horatio Hornblower"
         },
         {
             "id": 4,
-            "name": "Isabel Allende"
+            "name": "Sherlock Holmes"
         }
     ]
 }

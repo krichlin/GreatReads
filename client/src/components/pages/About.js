@@ -9,7 +9,7 @@ function About() {
           <NavBar />
         </header>
         <main>
-          <h1>This is my about component!</h1>
+          <h1>About GreatReads</h1>
         </main>
       </>
     );
