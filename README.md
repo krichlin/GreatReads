@@ -7,3 +7,7 @@
     * 📄 HTML5
     * 🌈 CSS3
     * 🟨 JavaScript
+    * React
+    * Python
+    * Flask
+    * SQLite
