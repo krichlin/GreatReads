@@ -13,6 +13,8 @@ import Friends from "./pages/Friends";
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
 
+
+
 const routes = [
     {
         path: "/",
@@ -20,12 +22,12 @@ const routes = [
         errorElement: <ErrorPage />
     },
     {
-        path: "/about",
+        path: "about",
         element: <About />,
         errorElement: <ErrorPage />
     },
     {
-        path: "/login",
+        path: "login",
         element: <Login />,
         errorElement: <ErrorPage />
     },
@@ -35,26 +37,26 @@ const routes = [
         errorElement: <ErrorPage />
     },
     {
-        path: "/search",
+        path: "search",
         element: <Search />,
         errorElement: <ErrorPage />
     },
     {
-        path: "/createnew",
+        path: "createnew",
         element: <CreateAccount />,
         errorElement: <ErrorPage />
     },
-    {   path: "/mylibrary",
+    {   path: "mylibrary",
         element: <MyLibrary />,
         errorElement: <ErrorPage />
     },
     {
-        path: "/friends",
+        path: "friends",
         element: <Friends />,
         errorElement: <ErrorPage />
     },
     {
-        path: "/book",
+        path: "book",
         element: <BookList />,
         errorElement: <ErrorPage />
     },

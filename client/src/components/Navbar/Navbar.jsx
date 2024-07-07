@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className='brand-and-toggler flex flex-sb'>
           <Link to = "/" className='navbar-brand flex'>
             <img src = {logoImg} alt = "site logo" />
-            <span className='text-uppercase fw-7 fs-24 ls-1'>bookhub</span>
+            <span className='text-uppercase fw-7 fs-24 ls-1'>greatreads</span>
           </Link>
           {/* placeholder for a working button lol */}
           <button type = "button" onClick={handleNavbar}>TOGGLE NAVBAR</button>

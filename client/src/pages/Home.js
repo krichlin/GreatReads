@@ -12,6 +12,7 @@ function Home() {
     <main>
       {/* <Navbar /> */}
       <Header />
+      HOME
     </main>
   );
 };
