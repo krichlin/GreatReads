@@ -1,8 +1,6 @@
-// src/components/pages/CreateAccount.js
+// /pages/CreateAccount.js
 
-
-
-import NavBar from "../NavBar"
+import NavBar from "../components/NavBar/NavBar"
 
 function CreateAccount() {
     return (

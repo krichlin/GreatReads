@@ -2,15 +2,17 @@
 
 // Move all React routs out of index.js and into this file.
 
-import Home from "./components/pages/Home";
-import About from "./components/pages/About";
-import Login from "./components/pages/Login";
-import UserProfile from "./components/pages/UserProfile";
-import ErrorPage from "./components/pages/ErrorPage";
-import Search from "./components/pages/Search";
-import CreateAccount from "./components/pages/CreateAccount";
-import MyLibrary from "./components/pages/MyLibrary";
-import Friends from "./components/pages/Friends";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Login from "./pages/Login";
+import UserProfile from "./pages/UserProfile";
+import ErrorPage from "./pages/ErrorPage";
+import Search from "./pages/Search";
+import CreateAccount from "./pages/CreateAccount";
+import MyLibrary from "./pages/MyLibrary";
+import Friends from "./pages/Friends";
+import BookList from "./components/BookList/BookList";
+import BookDetails from "./components/BookDetails/BookDetails";
 
 const routes = [
     {
@@ -50,6 +52,16 @@ const routes = [
     {
         path: "/friends",
         element: <Friends />,
+        errorElement: <ErrorPage />
+    },
+    {
+        path: "/book",
+        element: <BookList />,
+        errorElement: <ErrorPage />
+    },
+    {
+        path: "/book/:id",
+        element: <BookDetails />,
         errorElement: <ErrorPage />
     }
 ];

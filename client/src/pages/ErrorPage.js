@@ -1,6 +1,6 @@
-// src/components/pages/ErrorPage.js
+// /pages/ErrorPage.js
 
-import NavBar from "../NavBar";
+import NavBar from "../components/NavBar/NavBar";
 import { useRouteError } from "react-router-dom";
 
 function ErrorPage() {

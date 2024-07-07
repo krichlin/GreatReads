@@ -1,6 +1,6 @@
 // /src/components/pages/MyLibrary.js
 
-import NavBar from "../NavBar"
+import NavBar from "../components/NavBar/NavBar"
 
 function MyLibrary() {
     return (

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import UserCard from "../UserCard";
-import NavBar from "../NavBar"
+import UserCard from "../components/UserCard/UserCard";
+import NavBar from "../components/NavBar/NavBar"
 
 function Friends() {
   const [users, setUsers] = useState([])

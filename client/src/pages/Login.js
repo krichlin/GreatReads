@@ -1,6 +1,8 @@
 // Login.js
 
-import NavBar from "../NavBar"
+import NavBar from "../components/NavBar/NavBar"
+
+// add functionality here to use a demo account while auth isn't working
 
 function Login() {
     return (
