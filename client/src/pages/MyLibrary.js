@@ -1,12 +1,12 @@
 // /src/components/pages/MyLibrary.js
 
-import NavBar from "../components/NavBar/NavBar"
+import Navbar from "../components/Navbar/Navbar"
 
 function MyLibrary() {
     return (
       <>
         <header>
-          <NavBar />
+          <Navbar />
         </header>
         <main>
           <h1>Woah, Look at My Library full of Books!</h1>

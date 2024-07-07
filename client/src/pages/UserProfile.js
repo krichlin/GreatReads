@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import NavBar from "../components/NavBar/NavBar";
+import Navbar from "../components/Navbar/Navbar";
 
 function UserProfile() {
     const [user, setUser] = useState({});
@@ -24,7 +24,7 @@ function UserProfile() {
     return(
     <>
       <header>
-        <NavBar />
+        <Navbar />
       </header>
       <main>
         <h1>{user.name}</h1>

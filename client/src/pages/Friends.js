@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import UserCard from "../components/UserCard/UserCard";
-import NavBar from "../components/NavBar/NavBar"
+import Navbar from "../components/Navbar/Navbar"
 
 function Friends() {
   const [users, setUsers] = useState([])
@@ -19,7 +19,7 @@ function Friends() {
   return (
     <>
       <header>
-        <NavBar />
+        <Navbar />
       </header>
       <main>
         <h1>Here's A List of all your Friends on the site!</h1>

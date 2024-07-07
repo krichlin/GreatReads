@@ -1,12 +1,12 @@
 // /pages/CreateAccount.js
 
-import NavBar from "../components/NavBar/NavBar"
+import Navbar from "../components/Navbar/Navbar"
 
 function CreateAccount() {
     return (
       <>
         <header>
-          <NavBar />
+          <Navbar />
         </header>
         <main>
           <h1>Create a New Account</h1>

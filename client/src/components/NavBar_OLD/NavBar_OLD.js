@@ -4,16 +4,14 @@ import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 // <img src="/img/Greatreads-cropped.jpg" alt="greatreads icon">
 
-import logoImg from "../../images/logo.png";
+// import logoImg from "../../images/logo.png";
 import bannerImg from "../../images/Greatreads-cropped.jpg";
-
 
 /* define the NavBar component */
 function NavBar() {
   return (
     <>
         <img src={bannerImg} alt="greatreads banner"/>
-        <img src={logoImg} alt="greatreads logo" />
         <nav>
           <NavLink
             to="/"

@@ -1,7 +1,6 @@
 // routes.js
 
 // Move all React routs out of index.js and into this file.
-
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";

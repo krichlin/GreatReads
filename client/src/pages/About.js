@@ -1,12 +1,12 @@
 // /pages/About.js
 
-import NavBar from "../components/NavBar/NavBar"
+import Navbar from "../components/Navbar/Navbar"
 
 function About() {
     return (
       <>
         <header>
-          <NavBar />
+          <Navbar />
         </header>
         <main>
           <h1>About GreatReads</h1>
