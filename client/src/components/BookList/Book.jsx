@@ -1,3 +1,6 @@
+// components/BookList/Book.jsx
+// Formerly BookCard.js
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./BookList.css";

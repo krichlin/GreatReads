@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className='navbar' id = "navbar">
-      <img src = {bannerImg} alt="banner image" align='center'/>
+      <img src = {bannerImg} alt="banner" align='center'/>
       <div className='container navbar-content flex'>
 
         {/* This banner looks terrible, find a way to fix it with styling */}
