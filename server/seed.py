@@ -17,7 +17,7 @@ if __name__ == '__main__':
         # Seed code goes here!
 
         # Reset All Tables in Database
-        User.query.delete()
+        # User.query.delete()
 
         # Make sure users have unique usernames
         users = []
