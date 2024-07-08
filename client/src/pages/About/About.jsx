@@ -15,9 +15,9 @@ const About = () => {
             <img src = {aboutImg} alt = "" />
           </div>
           <div className='about-text'>
-            <h2 className='about-title fs-26 ls-1'>About BookHub</h2>
-            <p className='fs-17'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus dignissimos consequuntur vero commodi provident maiores, iusto atque corrupti voluptate vel sequi consectetur unde aliquam corporis saepe animi non, tempora reiciendis molestias sed laudantium dolores. Assumenda aperiam fuga quo voluptate commodi ullam aliquam expedita voluptas delectus.</p>
-            <p className='fs-17'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, dicta, possimus inventore eveniet atque voluptatibus repellendus aspernatur illo aliquam dignissimos illum. Commodi, porro omnis dolore amet neque modi quas eum!</p>
+            <h2 className='about-title fs-26 ls-1'>About GreatReads</h2>
+            <p className='fs-17'>GreatReads was developed by Ken Richlin as a capstone project for the Flatiron School's Software Engineering program.  GreatReads leverages OpenLibrary's API to get data on books, check out <u><a href='http://www.openlibrary.org'>OpenLibrary.org</a></u> for more information.</p>
+            <p className='fs-17'>GreatReads was built with JavaScript, JSX and React on the frontend, with a Python, Flask and SQLite database on the back.  For our deployment phase, we will migrate database to PosgGreSQL.  Finally, we hope to port the entire project to run on mobile with React Native.  For more information, check out <u><a href="https://github.com/krichlin/">My Github Page</a></u></p>
           </div>
         </div>
       </div>

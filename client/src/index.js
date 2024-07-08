@@ -10,6 +10,12 @@ import About from "./pages/About/About";
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
 
+// import MyLibrary from ".components/MyLibrary/MyLibrary";
+// import Profile from ".components/Profile/Profile"
+// import Login from ".components/Login/Login"
+// import CreateAccount from ".components/CreateAccount/CreateAccount"
+// import ErrorPage from ".components"
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AppProvider>
