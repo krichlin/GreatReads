@@ -12,6 +12,7 @@ const SearchForm = () => {
   useEffect(() => searchText.current.focus(), []);
   const handleSubmit = (e) => {
     e.preventDefault();
+    // console.log(e);
     let tempSearchTerm = searchText.current.value.trim();
     if((tempSearchTerm.replace(/[^\w\s]/gi,"")).length === 0){
       setSearchTerm("the lost world");

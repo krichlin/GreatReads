@@ -13,8 +13,6 @@ import Friends from "./pages/Friends";
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
 
-
-
 const routes = [
     {
         path: "/",
@@ -56,7 +54,7 @@ const routes = [
         errorElement: <ErrorPage />
     },
     {
-        path: "book",
+        path: "/book",
         element: <BookList />,
         errorElement: <ErrorPage />
     },
