@@ -11,6 +11,11 @@
   --transition: all 300ms ease-in-out;
 }
 
+/*  Padding main to get a border at the edges.  */
+main{
+  padding: 30px;
+}
+
 *{
   padding: 0;
   margin: 0;

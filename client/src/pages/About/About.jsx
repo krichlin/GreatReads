@@ -16,8 +16,8 @@ const About = () => {
           </div>
           <div className='about-text'>
             <h2 className='about-title fs-26 ls-1'>About GreatReads</h2>
-            <p className='fs-17'>GreatReads was developed by Ken Richlin as a capstone project for the Flatiron School's Software Engineering program.  GreatReads leverages OpenLibrary's API to get data on books, check out <a href='http://www.openlibrary.org'>OpenLibrary.org</a> for more information.</p>
-            <p className='fs-17'>GreatReads was built with JavaScript, JSX and React on the frontend, with a Python, Flask and SQLite database on the back.  For our deployment phase, we will migrate database to PosgGreSQL.  For more information, check out <a href="https://github.com/krichlin/">My Github Page</a></p>
+            <p className='fs-17'>GreatReads was developed by Ken Richlin as a capstone project for the Flatiron School's Software Engineering program.  GreatReads leverages OpenLibrary's API to get data on books, check out <u><a href='http://www.openlibrary.org'>OpenLibrary.org</a></u> for more information.</p>
+            <p className='fs-17'>GreatReads was built with JavaScript, JSX and React on the frontend, with a Python, Flask and SQLite database on the back.  For our deployment phase, we will migrate database to PosgGreSQL.  Finally, we hope to port the entire project to run on mobile with React Native.  For more information, check out <u><a href="https://github.com/krichlin/">My Github Page</a></u></p>
           </div>
         </div>
       </div>
