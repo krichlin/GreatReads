@@ -29,6 +29,8 @@ body{
   line-height: 1.7;
   font-family: 'Poppins', sans-serif;
   color: var(--black-color);
+  /* Change Background Color Here */
+  background-color:#85aff2;
 }
 
 /* resets */
