@@ -1,5 +1,7 @@
 # Welcome to GreatReads!
 
+GreatReads is a web application inspired by the popular site [GoodReads](http://www.goodreads.com).  
+
 ## Table of Contents
 
 ## Setup Instructions
@@ -11,13 +13,13 @@
 - Launch Greatreads by entering the client directoryGreatReads by typing `npm start` 
 
 ### Back End
-- To initialize the environment, type `pipenv install && pipenv shell`
-- Enable bcrypt by typing `pip install flask-bcrypt` (Maybe?)
-- Don't forget to `import validators` (Maybe?)
-- You should populate the database with some test data by running `python server/seed.py` (maybe do this in config to skip this step when we deploy?)
+- To initialize the environment, enter the server directory, and type `pipenv install && pipenv shell`
+- Enable bcrypt by typing `pip install flask-bcrypt` (May not be necessary if requirements set correctly?)
+- Don't forget to `import validators` (May not be necessary if requirements set correctly?)
+- Upgrade the db by typing `flask db upgrade head`
+- Populate the db with some test data by running `python seed.py` (maybe move this to config script to skip this step when we deploy?)
 - Start the server by typing `python server/app.py` (change this after deployment)
-- For deployment purposes only, don't forget to run `pip install python-dotenv` to set up the enviornment.
-
+- For deployment code only, don't forget to run `pip install python-dotenv` to set up the enviornment.
 
 ## Technologies Used
 
@@ -42,4 +44,12 @@ magic
 graphics
 
 ## Packages Used
+
+### Frontend
 * React Icons
+
+### Backend
+* SQLAlchemy
+* Flask RESTful
+* 
+
