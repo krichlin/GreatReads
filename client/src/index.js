@@ -1,11 +1,29 @@
-// /src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {
+  BrowserRouter, Routes, Route
+} from 'react-router-dom';
+import { AppProvider } from './context.';
+import './index.css';
+import Home from './pages/Home/Home';
+import About from "./pages/About/About";
+import BookList from "./components/BookList/BookList";
+import BookDetails from "./components/BookDetails/BookDetails";
 
-import React from "react";
-import ReactDOM from "react-dom/client";
-import createRoot from "react-dom/client";
-import { BrowserRouter as Router, RouterProvider, createBrowserRouter, 
-    Routes, Route } from "react-router-dom";
-import { AppProvider } from './context';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <AppProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path = "/" element = {<Home />}>
+          <Route path = "about" element = {<About />} />
+          <Route path = "book" element = {<BookList />} />
+          <Route path = "/book/:id" element = {<BookDetails />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </AppProvider>
+);
 
 // moved all imports into routes.js 
 // import Home from "./pages/Home";
@@ -20,21 +38,18 @@ import { AppProvider } from './context';
 // import BookList from "./components/BookList/BookList";
 // import BookDetails from "./components/BookDetails/BookDetails";
 
-import "./index.css";
-import routes from "./routes.js";
-
 // This sequence used to work:
+// const router = createBrowserRouter(routes);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(
+//   <AppProvider>
+//     <RouterProvider router={router}/>
+//   </AppProvider>
+//   );
 
-const router = createBrowserRouter(routes);
+// THis used to work too:
 // const container = document.getElementById("root");
 // const root = createRoot(container);
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <AppProvider>
-    <RouterProvider router={router}/>
-  </AppProvider>
-  );
-
 
 // This never worked:
 //root.render(
