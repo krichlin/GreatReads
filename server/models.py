@@ -53,8 +53,9 @@ class Book(db.Model, SerializerMixin):
     __tablename__ = 'books'
 
     id = db.Column(db.Integer, primary_key=True)
-    author = db.Column(db.String(30))
-    title = db.Column(db.String(50))
+    author = db.Column(db.String(30), nullable=False)
+    title = db.Column(db.String(50), nullable=False)
+    cover_id = db.Column(db.Integer, nullable=True)
     cover_img = db.Column(db.String(50), nullable=True)
     subjects = db.Column(db.String(500), nullable=True)
     subject_places = db.Column(db.String(100), nullable=True)
