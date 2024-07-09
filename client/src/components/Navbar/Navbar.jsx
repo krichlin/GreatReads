@@ -13,11 +13,9 @@ const Navbar = () => {
 
   return (
     <nav className='navbar' id = "navbar">
+      {/* This banner looks terrible, find a way to fix it with flex - KDR */}
       <img src = {bannerImg} alt="banner" align='center'/>
       <div className='container navbar-content flex'>
-
-        {/* This banner looks terrible, find a way to fix it with styling */}
-
         <div className='brand-and-toggler flex flex-sb'>
           <Link to = "/" className='navbar-brand flex'>
             <img src = {logoImg} alt = "site logo" />

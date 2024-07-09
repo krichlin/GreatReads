@@ -24,8 +24,8 @@ class User(db.Model, SerializerMixin):
     image_url = db.Column(db.String(500), nullable=True)
     bio = db.Column(db.String(500), nullable=True)
 
-    libraries = db.relationship('Library', backref='user', lazy=True)
-    reviews = db.relationship('Review', backref='user', lazy=True)
+    libraries = db.relationship('Library', backref='user_library', lazy=True)
+    reviews = db.relationship('Review', backref='user_review', lazy=True)
 
     @validates('username')
     def validate_username(self, key, username):

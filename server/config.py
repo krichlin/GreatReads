@@ -38,16 +38,16 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route("/")
 def helloWorld():
-  return "Hello, Cross-origin world!"
+    return '<h1>Project Server</h1>'
+
+@app.route("/api/v1/users")
+def list_users():
+  return "user example"
 
 # @app.route("/")
 # @cross_origin()
 # def howdy():
 #   return "Howdy partner!"
-
-@app.route("/api/v1/users")
-def list_users():
-  return "user example"
 
 # @app.route("/")
 # @cross_origin()  # Has a problem with this line
