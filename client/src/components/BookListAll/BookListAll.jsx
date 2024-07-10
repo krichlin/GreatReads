@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useGlobalContext } from '../../context.';
-import Book from "../BookList/Book";
+import BookAll from "../BookListAll/BookAll";
 import Loading from "../Loader/Loader";
 import coverImg from "../../images/cover_not_found.jpg";
 import "./BookListAll.css";
@@ -38,7 +38,7 @@ const BookListAll = () => {
                     books.slice(0, 30).map((item, index) => {
                         console.log(item);
                         return (
-                            <Book key = {index} {...item} />
+                            <BookAll key = {index} {...item} />
                             )
                         })
                     }

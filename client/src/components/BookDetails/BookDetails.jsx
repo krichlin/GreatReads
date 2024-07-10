@@ -10,6 +10,10 @@ import { useNavigate } from 'react-router-dom';
 
 const URL = "https://openlibrary.org/works/";
 
+// const handleClick((book) => {
+    
+// })
+
 const BookDetails = () => {
   const {id} = useParams();
   const [loading, setLoading] = useState(false);
@@ -83,11 +87,19 @@ const BookDetails = () => {
               <span className='fw-6'>Subjects: </span>
               <span>{book?.subjects}</span>
             </div>
+            <div className='book-details-button'>
+                <button>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
+                {/* <button type='button' className='flex flex-c' onClick={() => handleClick(book)}>
+                  CLICK HERE TO ADD BOOK TO YOUR LIBRARY
+                </button> */}
+            </div>
           </div>
         </div>
       </div>
     </section>
   )
 }
+
+
 
 export default BookDetails
