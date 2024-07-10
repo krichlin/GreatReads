@@ -25,6 +25,7 @@ const BookDetails = () => {
         // console.log(data);
 
         if(data){
+          console.log(data);
           const {description, title, covers, subject_places, subject_times, subjects} = data;
           // destructure data into bits
           // create a newBook object with those bits

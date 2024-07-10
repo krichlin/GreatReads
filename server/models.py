@@ -6,9 +6,16 @@ from sqlalchemy_serializer import SerializerMixin
 from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy.orm import validates
 from sqlalchemy.ext.hybrid import hybrid_property
+from sqlalchemy import MetaData
 
 # local imports
 from config import db, bcrypt
+
+# This stuff was moved to Config
+# metadata = MetaData(naming_convention={
+#     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
+# })
+# db = SQLAlchemy(metadata=metadata)
 
 # Models go here!
 
@@ -18,19 +25,19 @@ class User(db.Model, SerializerMixin):
     serialize_rules = ('-books.user', '-reviews.user','-_password_hash',)
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
+    username = db.Column(db.String(80), unique=True, nullable=True)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    _password_hash = db.Column(db.String(200), nullable=False)
+    _password_hash = db.Column(db.String(200), nullable=True)
     image_url = db.Column(db.String(500), nullable=True)
     bio = db.Column(db.String(500), nullable=True)
 
     libraries = db.relationship('Library', backref='user_library', lazy=True)
     reviews = db.relationship('Review', backref='user_review', lazy=True)
 
-    @validates('username')
-    def validate_username(self, key, username):
-        if len(username) < 5:
-            raise ValueError('Username must be at least 5 characters long.')
+    # @validates('username')
+    # def validate_username(self, key, username):
+    #     if len(username) < 5:
+    #         raise ValueError('Username must be at least 5 characters long.')
 
     @hybrid_property
     def password_hash(self):
@@ -61,7 +68,7 @@ class Book(db.Model, SerializerMixin):
     subject_places = db.Column(db.String(100), nullable=True)
     subject_times = db.Column(db.String(100), nullable=True)
     edition_count = db.Column(db.Integer, nullable=True)
-    first_publish_year = db.Column(db.String(4), nullable=True)
+    first_publish_year = db.Column(db.Integer, nullable=True)
     olid = db.Column(db.String(16), nullable=True)
     average_rating = db.Column(db.Integer, nullable=True)
     description = db.Column(db.String(500), nullable=True)
