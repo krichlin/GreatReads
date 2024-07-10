@@ -62,6 +62,7 @@ class Book(db.Model, SerializerMixin):
     subject_times = db.Column(db.String(100), nullable=True)
     edition_count = db.Column(db.Integer, nullable=True)
     first_publish_year = db.Column(db.String(4), nullable=True)
+    olid = db.Column(db.String(16), nullable=True)
     average_rating = db.Column(db.Integer, nullable=True)
     description = db.Column(db.String(500), nullable=True)
     genre = db.Column(db.String(20), nullable = True)

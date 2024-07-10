@@ -39,18 +39,16 @@ if __name__ == '__main__':
                 first_publish_year=1965,
             ),
             Book(
-                title= ,
-                author= ,
-                cover_id= ,
-                cover_img="" ,
-                edition_count=5,
-                first_publish_year=1065,
-            ),
-                author='Lewis Carroll',
+                title= "Alice's Adventures in Wonderland",
+                author= Lewis Carroll,
                 cover_id= 10527843,
-                cover_img
-: 
-"https://covers.openlibrary.org/b/id/10527843-L.jpg"
+                cover_img="https://covers.openlibrary.org/b/id/10527843-L.jpg",
+                edition_count=3559,
+                first_publish_year=1865,
+                olid="OL138052W"
+
+            ),
+
 edition_count
 : 
 3559
@@ -62,7 +60,7 @@ id
 "OL138052W"
 title
 : 
-"Alice's Adventures in Wonderland"
+
 
             ),
             Book(),
