@@ -7,10 +7,14 @@ import {
 } from 'react-router-dom';
 import { AppProvider } from './context.';
 import './index.css';
+
 import Home from './pages/Home/Home';
-import About from "./pages/About/About";
+import About from './pages/About/About';
+import ShowAll from './pages/ShowAll/ShowAll';
+
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
+import BookListAll from "./components/BookListAll/BookListAll";
 
 // import MyLibrary from ".components/MyLibrary/MyLibrary";
 // import Profile from ".components/Profile/Profile"
@@ -27,6 +31,7 @@ root.render(
           <Route path = "about" element = {<About />} />
           <Route path = "book" element = {<BookList />} />
           <Route path = "/book/:id" element = {<BookDetails />} />
+          <Route path = "showall" element = {<BookListAll />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -31,6 +31,33 @@ def firstbook():
     book_dict = book.to_dict()
     return make_response(book_dict, 200)
 
+# @app.route('/allbooks')
+# def allbooks():
+#     books = []
+#     for book in Book.query.all():
+#         book_dict = {
+#             "title": book.title,
+#             "author": book.author,
+#             "cover_id": book.cover_id,
+#             "cover_img": book.cover_img,
+#             "description": book.description,
+#             "edition_count": book.edition_count,
+#             "first_publish_year": book.first_publish_year,
+#             "genre": book.genre,
+#             "olid": book.olid,
+#             "reviews": book.reviews,
+#             "subject_places": book.subject_places,
+#             "subject_times": book.subject_times,
+#             "subjects": book.subjects,
+#         }
+#         books.append(book_dict)
+    
+#     response = make_response(
+#         jsonify(books), 200
+#     )
+
+#     return response
+
 @app.route('/books/<int:id>')
 def book_by_id(id):
     book = Book.query.filter(Book.id == id).first()
@@ -41,6 +68,17 @@ def book_by_id(id):
         body = {'message': f'Sorry, Book {id} not found.'}
         status = 404
     return make_response(body, status)
+
+class AllBooks(Resource):
+    def get(self):
+        response_dict_list = [n.to_dict() for n in Book.query.all()] 
+        response = make_response(
+            response_dict_list,
+            200,
+        )
+        return response
+
+api.add_resource(AllBooks, '/allbooks')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
