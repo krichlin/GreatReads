@@ -32,7 +32,7 @@ const BookDetails = () => {
           console.log(data);
           const {description, title, covers, subject_places, subject_times, subjects} = data;
           // destructure data into bits
-          // create a newBook object with those bits
+          // create a newBook object with those bits, but also includes the cover URL
           const newBook = {
             description: description ? description.value : "No description found",
             title: title,
@@ -92,6 +92,8 @@ const BookDetails = () => {
                 {/* <button type='button' className='flex flex-c' onClick={() => handleClick(book)}>
                   CLICK HERE TO ADD BOOK TO YOUR LIBRARY
                 </button> */}
+
+                
             </div>
           </div>
         </div>
