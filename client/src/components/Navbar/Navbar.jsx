@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logoImg from "../../images/logo.png";
-import bannerImg from "../../images/Greatreads-cropped.jpg"
+import bannerImg from "../../images/Greatreads.png"
 import {HiOutlineMenuAlt3} from "react-icons/hi";
 
 const Navbar = () => {
