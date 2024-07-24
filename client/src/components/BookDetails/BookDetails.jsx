@@ -39,7 +39,8 @@ const BookDetails = () => {
             cover_img: covers ? `https://covers.openlibrary.org/b/id/${covers[0]}-L.jpg` : coverImg,
             subject_places: subject_places ? subject_places.join(", ") : "No subject places found",
             subject_times : subject_times ? subject_times.join(", ") : "No subject times found",
-            subjects: subjects ? subjects.join(", ") : "No subjects found"
+            subjects: subjects ? subjects.join(", ") : "No subjects found",
+            id: id
           };
           setBook(newBook);
         } else {
@@ -76,6 +77,10 @@ const BookDetails = () => {
               <span>{book?.description}</span>
             </div>
             <div className='book-details-item'>
+              <span className='fw-6'>Open Library OLID: </span>
+              <span className='text-italic'>{id}</span>
+            </div>
+            <div className='book-details-item'>
               <span className='fw-6'>Subject Places: </span>
               <span className='text-italic'>{book?.subject_places}</span>
             </div>
@@ -92,8 +97,6 @@ const BookDetails = () => {
                 {/* <button type='button' className='flex flex-c' onClick={() => handleClick(book)}>
                   CLICK HERE TO ADD BOOK TO YOUR LIBRARY
                 </button> */}
-
-                
             </div>
           </div>
         </div>
