@@ -11,9 +11,15 @@ import { useNavigate } from 'react-router-dom';
 const URL = "https://openlibrary.org/works/";
 
 const handleAdd = ((book) => {
-  console.log("clicked")
-    // Do magic CREATE call here to add book to db
+  console.log("clicked add")
+    // Do magic POST call here to CREATE new book to db tables
     // This is where we add the book to the library.
+});
+
+const handleRemove = ((book) => {
+  console.log("clicked remove")
+    // Do magic DELETE here to REMOVE book to db
+    // This is where we remove a book from the database.
 });
 
 const BookDetails = () => {
@@ -31,7 +37,7 @@ const BookDetails = () => {
         // console.log(data);
 
         if(data){
-          console.log(data);
+          // console.log(data);
           const {description, title, covers, subject_places, subject_times, subjects} = data;
           // destructure data into bits
           // create a newBook object with those bits, but also includes the cover URL
@@ -99,9 +105,10 @@ const BookDetails = () => {
             </div>
             <div className='book-add-button'>
                 <button type='button' className='flex flex-c' onClick={(book) => (handleAdd())}>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
-                {/* <button type='button' className='flex flex-c' onClick={() => handleClick(book)}>
-                  CLICK HERE TO ADD BOOK TO YOUR LIBRARY
-                </button> */}
+                {/* this button took forever to get working, had to send it an arrow function because function was invoked not passed */}
+            </div>
+            <div className='book-remove-button'>
+                <button type='button' className='flex flex-c' onClick={(book) => (handleRemove())}>CLICK HERE TO REMOVE BOOK FROM YOUR LIBRARY </button>
             </div>
           </div>
         </div>
