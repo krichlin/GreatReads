@@ -1,3 +1,5 @@
+/* components/Header/Header.css */
+
 .header-content{
     min-height: 75vh;
     background: linear-gradient(rgba(141, 39, 174, 0.3), rgba(141, 39, 174, 0.5)), url("../../images/library-img.jpg") center/cover no-repeat;

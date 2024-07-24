@@ -1,3 +1,5 @@
+// components/BookList/BookList.jsx
+
 import React from 'react';
 import { useGlobalContext } from '../../context.';
 import Book from "../BookList/Book";
@@ -5,6 +7,7 @@ import Loading from "../Loader/Loader";
 import coverImg from "../../images/cover_not_found.jpg";
 import "./BookList.css";
 
+// You can grab the covers from this link:
 //https://covers.openlibrary.org/b/id/240727-S.jpg
 
 const BookList = () => {
@@ -17,6 +20,7 @@ const BookList = () => {
       cover_img: singleBook.cover_id ? `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg` : coverImg
     }
   });
+  // console.log(booksWithCovers)
 
   if(loading) return <Loading />;
 
@@ -29,6 +33,7 @@ const BookList = () => {
         <div className='booklist-content grid'>
           {
             booksWithCovers.slice(0, 30).map((item, index) => {
+              console.log(item);
               return (
                 <Book key = {index} {...item} />
               )
@@ -40,4 +45,4 @@ const BookList = () => {
   )
 }
 
-export default BookList
+export default BookList;

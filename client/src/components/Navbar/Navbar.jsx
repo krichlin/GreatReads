@@ -1,8 +1,10 @@
+// components/Navbar/Navbar.jsx
+
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logoImg from "../../images/logo.png";
-import bannerImg from "../../images/Greatreads-cropped.jpg"
+import bannerImg from "../../images/Greatreads.png"
 import {HiOutlineMenuAlt3} from "react-icons/hi";
 
 const Navbar = () => {
@@ -11,11 +13,9 @@ const Navbar = () => {
 
   return (
     <nav className='navbar' id = "navbar">
-      <img src = {bannerImg} alt="banner image" align='center'/>
+      {/* This banner looks terrible, find a way to fix it with flex - KDR */}
+      <img src = {bannerImg} alt="banner" align='center'/>
       <div className='container navbar-content flex'>
-
-        {/* This banner looks terrible, find a way to fix it with styling */}
-
         <div className='brand-and-toggler flex flex-sb'>
           <Link to = "/" className='navbar-brand flex'>
             <img src = {logoImg} alt = "site logo" />
@@ -35,6 +35,9 @@ const Navbar = () => {
             </li>
             <li className='nav-item'>
               <Link to = "about" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>about</Link>
+            </li>
+            <li className='nav-item'>
+              <Link to = "showall" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>showall</Link>
             </li>
           </ul>
         </div>

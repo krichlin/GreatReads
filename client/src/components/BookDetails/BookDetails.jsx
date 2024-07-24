@@ -1,3 +1,5 @@
+// components/BookDetails/BookDetails.jsx
+
 import React, {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import Loading from "../Loader/Loader";
@@ -7,6 +9,10 @@ import {FaArrowLeft} from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 
 const URL = "https://openlibrary.org/works/";
+
+// const handleClick((book) => {
+    
+// })
 
 const BookDetails = () => {
   const {id} = useParams();
@@ -23,6 +29,7 @@ const BookDetails = () => {
         // console.log(data);
 
         if(data){
+          console.log(data);
           const {description, title, covers, subject_places, subject_times, subjects} = data;
           // destructure data into bits
           // create a newBook object with those bits
@@ -80,11 +87,19 @@ const BookDetails = () => {
               <span className='fw-6'>Subjects: </span>
               <span>{book?.subjects}</span>
             </div>
+            <div className='book-details-button'>
+                <button>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
+                {/* <button type='button' className='flex flex-c' onClick={() => handleClick(book)}>
+                  CLICK HERE TO ADD BOOK TO YOUR LIBRARY
+                </button> */}
+            </div>
           </div>
         </div>
       </div>
     </section>
   )
 }
+
+
 
 export default BookDetails
