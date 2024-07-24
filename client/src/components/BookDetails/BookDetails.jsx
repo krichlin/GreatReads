@@ -10,9 +10,11 @@ import { useNavigate } from 'react-router-dom';
 
 const URL = "https://openlibrary.org/works/";
 
-// const handleClick((book) => {
-    
-// })
+const handleAdd = ((book) => {
+  console.log("clicked")
+    // Do magic CREATE call here to add book to db
+    // This is where we add the book to the library.
+});
 
 const BookDetails = () => {
   const {id} = useParams();
@@ -43,9 +45,12 @@ const BookDetails = () => {
             id: id
           };
           setBook(newBook);
+          console.log("🚀 ~ getBookDetails ~ newBook:", newBook)
+           // What on earth does this thing even look liek?
         } else {
           setBook(null);
         }
+         
         setLoading(false);
       } catch(error){
         console.log(error);
@@ -92,8 +97,8 @@ const BookDetails = () => {
               <span className='fw-6'>Subjects: </span>
               <span>{book?.subjects}</span>
             </div>
-            <div className='book-details-button'>
-                <button>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
+            <div className='book-add-button'>
+                <button type='button' className='flex flex-c' onClick={(book) => (handleAdd())}>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
                 {/* <button type='button' className='flex flex-c' onClick={() => handleClick(book)}>
                   CLICK HERE TO ADD BOOK TO YOUR LIBRARY
                 </button> */}

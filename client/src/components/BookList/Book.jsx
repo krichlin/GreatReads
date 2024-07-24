@@ -22,7 +22,7 @@ const Book = (book) => {
           <span className='text-capitalize fw-7'>Author: </span>
           {/* <span>{book.author.join(", ")}</span> */}
           {/* Again, it really doesn't like this join function At. All. causes runtime errors  */}
-          <span>{book.author[1]}</span>
+          <span>{book.author}</span>
           {/* OK since Author is an array, we just take the 1st element and it's good. */}
         </div>
 

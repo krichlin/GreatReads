@@ -1,5 +1,8 @@
 /* components/BookDetails/BookDetails.css */
 
+.book-add-button{
+    padding: 1rem 0;
+}
 .book-details{
     padding: 6rem 0;
 }
