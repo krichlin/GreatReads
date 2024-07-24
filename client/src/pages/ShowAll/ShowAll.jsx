@@ -14,6 +14,8 @@ const ShowAll = () => {
         <div className='about-content grid'>
             <h2>Show All Books Here</h2>
             
+            {/* Write some code that displays all the books here.  */}
+
         </div>
       </div>
     </section>
