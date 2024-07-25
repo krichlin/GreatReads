@@ -20,6 +20,11 @@ const handleRemove = ((book) => {
   console.log("clicked remove")
     // Do magic DELETE here to REMOVE book to db
     // This is where we remove a book from the database.
+  fetch(`http://127.0.0.1:5555/books/${book.id}`,{
+    method: "DELETE",
+  })
+    .then((r) => r.json())
+    // .then((deletedBook) => onDeleteBook(deletedBook))  // this undefined right now
 });
 
 const BookDetails = () => {
@@ -104,11 +109,11 @@ const BookDetails = () => {
               <span>{book?.subjects}</span>
             </div>
             <div className='book-add-button'>
-                <button type='button' className='flex flex-c' onClick={(book) => (handleAdd())}>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
+                <button type='button' className='flex flex-c' onClick={(book) => (handleAdd(book))}>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
                 {/* this button took forever to get working, had to send it an arrow function because function was invoked not passed */}
             </div>
             <div className='book-remove-button'>
-                <button type='button' className='flex flex-c' onClick={(book) => (handleRemove())}>CLICK HERE TO REMOVE BOOK FROM YOUR LIBRARY </button>
+                <button type='button' className='flex flex-c' onClick={(book) => (handleRemove(book))}>CLICK HERE TO REMOVE BOOK FROM YOUR LIBRARY </button>
             </div>
           </div>
         </div>
