@@ -3,7 +3,7 @@
 import React from 'react';
 import "./Footer.css";
 
-const Header = () => {
+const Footer = () => {
   return (
     <div className='holder'>
         <footer className='footer'>
@@ -16,4 +16,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Footer

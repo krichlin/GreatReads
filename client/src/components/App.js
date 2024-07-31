@@ -1,11 +1,14 @@
 // components/App.js
 
 import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { AppContext } from "../context.";
+
 // import { Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
 
-function App() {
 
+function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {

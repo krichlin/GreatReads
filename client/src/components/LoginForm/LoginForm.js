@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { AppContext } from "../context/Context";
+import { AppContext } from "../../context.";
 import { useNavigate } from "react-router-dom";
 import { Formik } from 'formik';
 import * as yup from 'yup'
@@ -13,8 +13,8 @@ function LoginForm() {
     const { setUser } = useAppContext();
 
     let validationSchema = yup.object().shape({
-        username: yup.string().required("USername is required").min(5, "Username is too short, must be at least five characters."),
-        password: yup.string().required("Password is required").min(6, "Password is too short, must be longer than six characters.")
+        username: yup.string().required("Username required").min(5, "Username too short, must be at least five characters."),
+        password: yup.string().required("Password required").min(6, "Password too short, must be longer than six characters.")
     })
 
     const initialValues = {
@@ -23,7 +23,7 @@ function LoginForm() {
     }
 
     function handleLoginSubmit(values, { setSubmitting }) {
-        fetch("/api/login", {
+        fetch("/login", {
             method: 'POST',
             headers: {
                 "Content-Type": 'application/json'

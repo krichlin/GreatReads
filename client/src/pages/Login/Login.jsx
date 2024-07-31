@@ -1,18 +1,76 @@
 // pages/Login/Login.jsx
 
-import React from 'react';
-import "./Login.css";
-// import aboutImg from "../../images/about-img.jpg";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+// import NavBar from "../components/NavBar";
+import Footer from "../../components/Footer/Footer";
+import Button from 'react-bootstrap/Button';
+import LoginForm from "../../components/LoginForm/LoginForm";
 
-const Login = () => {
-  return (
-    <>
-      <h1>THIS IS THE LOGIN PAGE</h1>
-    </>
-  );
+function Login() {
+    const navigate = useNavigate();
+
+    return(
+        <>
+        {/* <NavBar /> */}
+        <main>
+            <br></br>
+            <div className="login-container">
+            <h1 className="login-header">Welcome to GreatReads</h1>
+            <h3 className="login-header2"> Sign In</h3>
+            </div>
+            <LoginForm/>
+            <h4 className="signup-redirect-from-loginpage">
+                Don't have an account? &nbsp;
+                <Button className="route-to-signup" variant="success" onClick={() => navigate("/signup")}>
+                    Sign Up
+                </Button>
+            </h4>
+        </main>
+        {/* <Footer /> */}
+        </>
+    )
 }
+export default Login;
 
-export default Login
+
+
+
+
+// import React, { useContext } from "react";
+// // import { AppContext } from "../context/Context";
+// import { useNavigate } from "react-router-dom";
+// import { Formik } from 'formik';
+// import * as yup from 'yup'
+// import Form from 'react-bootstrap/Form';
+// import Container from 'react-bootstrap/Container';
+// import Button from 'react-bootstrap/Button';
+
+// import "./Login.css";
+
+// // import aboutImg from "../../images/about-img.jpg";
+
+// const Login = () => {
+
+
+//   const validationSchema = Yup.object({
+//     email: Yup.string().email('Invalid email address').required('Required'),
+//     password: Yup.string().required('Required'),
+//   });
+  
+//     const LoginForm = () => {
+//     const handleSubmit = (values) => {
+//       // Handle the form submission here
+//       console.log(values);
+//     };
+//     return (
+//       <>
+//         <h1>THIS IS THE LOGIN PAGE</h1>
+//       </>
+//     );
+//   };
+// }
+// export default Login
 
 // // Login.js
 
