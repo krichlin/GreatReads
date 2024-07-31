@@ -1,6 +1,6 @@
 # Welcome to GreatReads!
 
-GreatReads is a web application inspired by the popular site [GoodReads](http://www.goodreads.com).  
+GreatReads is a web application inspired by the popular site [GoodReads](http://www.goodreads.com).  GreatReads leverages the [Open Library API](http://openlibrary.org/developers/api) to search for new books by Title, Author, or IBSN.  Once you find a book, add it to your library of favorites.  Manage your library by adding new books or removing books you don't like anymore.  Read and leave Reviews and Ratings for books.  Get started by making an account and logging in.
 
 ## Table of Contents
 
@@ -46,10 +46,14 @@ graphics
 ## Packages Used
 
 ### Frontend
+* React Router
 * React Icons
+* React Redux
+* React Bootstrap
+* Formik
+* Yup
 
 ### Backend
 * SQLAlchemy
 * Flask RESTful
-* 
-
+* Bcrypt

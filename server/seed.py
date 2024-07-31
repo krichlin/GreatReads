@@ -68,42 +68,54 @@ if __name__ == '__main__':
             User(
                 username='HarryPotter',
                 email='HarryPotter@hogworts.edu',
-                bio='Hello, I am Harry Potter.  Pleased to meet you.'
+                bio='Hello, I am Harry Potter.  Pleased to meet you.',
+                f_name='Harry',
+                l_name='Potter',
+                _password_hash="password123!",
+                image_url='https://static.wikia.nocookie.net/neoencyclopedia/images/4/44/HarryPotter5poster.jpg'
             ),
             User(
                 username='HermioneGranger',
                 email='HermioneGranger@hogworts.edu',
-                bio='I am Hermione Grainger.  I like books about magic.'
+                bio='I am Hermione Grainger.  I like books about magic.',
+                f_name='Hermione',
+                l_name='Granger',
+                _password_hash="password321!",
+                image_url='https://i0.wp.com/the-art-of-autism.com/wp-content/uploads/2022/12/Hermione-Granger.jpg'
             ),
             User(
                 username='AlbusDumbledore',
                 email='Headmaster@hogworts.edu',
-                bio='I am the Headmaster of Hogworts School of Witchcraft and Wizardry.'
+                bio='I am the Headmaster of Hogworts School of Witchcraft and Wizardry.',
+                f_name='Albus',
+                l_name='Dumbledore',
+                _password_hash='password456!',
+                image_url='https://static.wikia.nocookie.net/100gamesvictorfanficstories/images/a/ac/Albus_Dumbledore.jpg'
             )
         ]
 
         print("Seeding Users")
         db.session.add_all(users)
 
-        # make sure users have unique usernames
-        users = []
-        usernames = []
+        # # make sure users have unique usernames
+        # users = []
+        # usernames = []
 
-        for i in range(20):
-            username = fake.first_name()
-            while username in usernames:
-                username = fake.first_name()
-            usernames.append(username)
+        # for i in range(20):
+        #     username = fake.first_name()
+        #     while username in usernames:
+        #         username = fake.first_name()
+        #     usernames.append(username)
 
-            user = User(
-                username=username,
-                bio=fake.paragraph(nb_sentences=3),
-                image_url=fake.url(), 
-                email = fake.email() )
-            # user.password_hash = user.username + 'password'
-            user.password = 'password'
-            users.append(user)
+        #     user = User(
+        #         username=username,
+        #         bio=fake.paragraph(nb_sentences=3),
+        #         image_url=fake.url(), 
+        #         email = fake.email() )
+        #     # user.password_hash = user.username + 'password'
+        #     user.password = 'password'
+        #     users.append(user)
 
-        db.session.add_all(users)
+        # db.session.add_all(users)
 
         db.session.commit()

@@ -5,11 +5,18 @@ import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logoImg from "../../images/logo.png";
 import bannerImg from "../../images/Greatreads.png"
-import {HiOutlineMenuAlt3} from "react-icons/hi";
+import {HiOutlineLogout, HiOutlineMenuAlt3} from "react-icons/hi";
 
-const Navbar = () => {
+const Navbar = ( onLogout ) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleNavbar = () => setToggleMenu(!toggleMenu);
+
+  function handleLogout() {
+    fetch("/logout", {
+      method: "DELETE",
+    })
+    .then(() => onLogout());
+  } 
 
   return (
     <nav className='navbar' id = "navbar">
@@ -38,6 +45,12 @@ const Navbar = () => {
             </li>
             <li className='nav-item'>
               <Link to = "showall" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>showall</Link>
+            </li>
+            <li className='nav-item'>
+              <Link to = "logout" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>logout</Link>
+            </li>
+            <li className='nav-item'>
+              <Link to = "login" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>login</Link>
             </li>
           </ul>
         </div>
