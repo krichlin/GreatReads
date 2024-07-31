@@ -11,10 +11,12 @@ import './index.css';
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import ShowAll from './pages/ShowAll/ShowAll';
+import Login from './pages/Login/Login';
 
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
 import BookListAll from "./components/BookListAll/BookListAll";
+
 
 // import MyLibrary from ".components/MyLibrary/MyLibrary";
 // import Profile from ".components/Profile/Profile"
@@ -29,6 +31,7 @@ root.render(
       <Routes>
         <Route path = "/" element = {<Home />}>
           <Route path = "about" element = {<About />} />
+          <Route path = "login" element = {<Login />} />
           <Route path = "book" element = {<BookList />} />
           <Route path = "/book/:id" element = {<BookDetails />} /> 
           <Route path = "showall" element = {<BookListAll />} />

@@ -1,0 +1,30 @@
+/* pages/Login/Login.css */
+
+.login{
+    padding: 3rem 0;
+}
+.login-content{
+    gap: 4rem;
+}
+.login-title{
+    margin: 1rem 0;
+}
+.login-img img{
+    max-width: 520px;
+}
+.login-text p{
+    margin: 1.8rem 0;
+    opacity: 0.8;
+}
+
+@media screen and (min-width: 800px){
+    .login-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .login-title{
+        margin-top: 0;
+    }
+    .login-img img{
+        margin-left: 0;
+    }
+}
