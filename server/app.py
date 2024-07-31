@@ -226,13 +226,19 @@ class BookById(Resource):
             for attr in params:
                 setattr(book, attr, params[attr])
             db.session.commit()
-
             # Do something more here before returing?
-
             return make_response(book.to_dict(rules = ()), 204)
-
         else:
             return make_response({'error': 'Sorry, Book not found'}, 404)
+    
+    def delete(self,id):
+        book = db.session.get(Book,id)
+        if book:
+            db.session.delete(book)
+            db.session.commit()
+            return make_response({"message": "Book deleted successfully."}, 204)
+        else:
+            return make_response({"error": "Book not found"}, 404)
 
 # class MyLibrary(Resource):
 #     def get(self,id):
