@@ -12,7 +12,8 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import ShowAll from './pages/ShowAll/ShowAll';
 import Login from './pages/Login/Login';
-import Signup from './pages/Signup/Signup';
+// import Signup from './pages/Signup/Signup';
+import SignUpForm from './components/SignUpForm/SignUpForm';
 
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
@@ -36,7 +37,7 @@ root.render(
           <Route path = "book" element = {<BookList />} />
           <Route path = "/book/:id" element = {<BookDetails />} /> 
           <Route path = "showall" element = {<BookListAll />} />
-          <Route path = "signup" element = {<Signup />} />
+          <Route path = "signup" element = {<SignUpForm />} />
         </Route>
       </Routes>
     </BrowserRouter>
