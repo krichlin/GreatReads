@@ -92,25 +92,16 @@ if __name__ == '__main__':
                 _password_hash='password456!',
                 image_url='https://static.wikia.nocookie.net/100gamesvictorfanficstories/images/a/ac/Albus_Dumbledore.jpg'
             ),
-            User(
-                username='krichlin',
-                email='krichlin@gmail.com',
-                bio="Hi I'm Ken I'm into Reading and Magic!",
-                f_name='Ken',
-                l_name='Richlin',
-                _password_hash='Obliter8!',
-                image_url='https://media.licdn.com/dms/image/C5603AQH6PkKUrbzJ4w/profile-displayphoto-shrink_200_200/0/1625325706900?e=2147483647&v=beta&t=pdWFc6dtEy_QW5S8cyGmER2jLIm-tiOp7R9u2HZl38E'
-            ),
+            # User(
+            #     username='krichlin',
+            #     email='krichlin@gmail.com',
+            #     bio="Hi I'm Ken I'm into Reading and Magic!",
+            #     f_name='Ken',
+            #     l_name='Richlin',
+            #     _password_hash='Obliter8!',
+            #     image_url='https://media.licdn.com/dms/image/C5603AQH6PkKUrbzJ4w/profile-displayphoto-shrink_200_200/0/1625325706900?e=2147483647&v=beta&t=pdWFc6dtEy_QW5S8cyGmER2jLIm-tiOp7R9u2HZl38E'
+            # ),
         ]
-
-        {
-            "id": 4,
-            "name":"krichlin",
-            "email": "krichlin@gmail.com",
-            "image_url":"https://media.licdn.com/dms/image/C5603AQH6PkKUrbzJ4w/profile-displayphoto-shrink_200_200/0/1625325706900?e=2147483647&v=beta&t=pdWFc6dtEy_QW5S8cyGmER2jLIm-tiOp7R9u2HZl38E",
-            "bio":"Hi I'm Ken I'm into Reading and Magic!"
-        }
-
 
         print("Seeding Users")
         db.session.add_all(users)

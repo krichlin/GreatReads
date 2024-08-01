@@ -38,7 +38,7 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route("/")
 def helloWorld():
-    return '<h1>Project Server</h1>'
+    return ('<h1>Welcome to the GreatReads Project Server</h1><p>Good things to ask for might be:</p><p>signup login logout allbooks user addbook books check_session</p>');
 
 @app.route("/api/v1/users")
 def list_users():
