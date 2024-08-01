@@ -3,6 +3,9 @@ import { Button, Error, Input, FormField, Label, Textarea } from "../../styles";
 
 function SignUpForm({ onLogin }) {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [f_name, setF_name] = useState("");
+  const [l_name, setL_name] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -21,6 +24,9 @@ function SignUpForm({ onLogin }) {
       },
       body: JSON.stringify({
         username,
+        email,
+        f_name,
+        l_name,
         password,
         password_confirmation: passwordConfirmation,
         image_url: imageUrl,
@@ -46,6 +52,36 @@ function SignUpForm({ onLogin }) {
           autoComplete="off"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+        />
+      </FormField>
+      <FormField>
+        <Label htmlFor="email">email</Label>
+        <Input
+          type="text"
+          id="email"
+          autoComplete="off"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </FormField>
+      <FormField>
+        <Label htmlFor="f_name">First Name</Label>
+        <Input
+          type="text"
+          id="f_name"
+          autoComplete="off"
+          value={f_name}
+          onChange={(e) => setF_name(e.target.value)}
+        />
+      </FormField>
+      <FormField>
+        <Label htmlFor="l_name">Last Name</Label>
+        <Input
+          type="text"
+          id="l_name"
+          autoComplete="off"
+          value={l_name}
+          onChange={(e) => setL_name(e.target.value)}
         />
       </FormField>
       <FormField>

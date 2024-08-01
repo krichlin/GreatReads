@@ -1,12 +1,14 @@
 // index.js
 
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   BrowserRouter, Routes, Route
 } from 'react-router-dom';
 import { AppProvider } from './context.';
 import './index.css';
+
+import App from './components/App'
 
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
@@ -26,20 +28,23 @@ import BookListAll from "./components/BookListAll/BookListAll";
 // import CreateAccount from ".components/CreateAccount/CreateAccount"
 // import ErrorPage from ".components"
 
+// const [user, setUser] = useState(null);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AppProvider>
     <BrowserRouter>
-      <Routes>
+    <App/>
+      {/* <Routes>
         <Route path = "/" element = {<Home />}>
           <Route path = "about" element = {<About />} />
-          <Route path = "login" element = {<Login />} />
+          <Route path = "login" element = {<Login onLogin={setUser} />} />
           <Route path = "book" element = {<BookList />} />
           <Route path = "/book/:id" element = {<BookDetails />} /> 
           <Route path = "showall" element = {<BookListAll />} />
           <Route path = "signup" element = {<SignUpForm />} />
         </Route>
-      </Routes>
+      </Routes> */}
     </BrowserRouter>
   </AppProvider>
 );
