@@ -15,6 +15,8 @@ const ShowAll = () => {
             <h2>Show All Books Here</h2>
             
             {/* Write some code that displays all the books here.  */}
+            {/* I swear I had this working, and now it's not here any more? */}
+            {/* The backend was not running.   */}
 
         </div>
       </div>
