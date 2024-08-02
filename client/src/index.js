@@ -1,6 +1,6 @@
 // index.js
 
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import {
   BrowserRouter, Routes, Route
@@ -8,37 +8,46 @@ import {
 import { AppProvider } from './context.';
 import './index.css';
 
-import Home from './pages/Home/Home';
-import About from './pages/About/About';
-import ShowAll from './pages/ShowAll/ShowAll';
+import App from './components/App'
 
-import BookList from "./components/BookList/BookList";
-import BookDetails from "./components/BookDetails/BookDetails";
-import BookListAll from "./components/BookListAll/BookListAll";
-
+// import Home from './pages/Home/Home';
+// import About from './pages/About/About';
+// import ShowAll from './pages/ShowAll/ShowAll';
+// import Login from './pages/Login/Login';
+// import Signup from './pages/Signup/Signup';
+// import SignUpForm from './components/SignUpForm/SignUpForm';
+// import BookList from "./components/BookList/BookList";
+// import BookDetails from "./components/BookDetails/BookDetails";
+// import BookListAll from "./components/BookListAll/BookListAll";
 // import MyLibrary from ".components/MyLibrary/MyLibrary";
 // import Profile from ".components/Profile/Profile"
 // import Login from ".components/Login/Login"
 // import CreateAccount from ".components/CreateAccount/CreateAccount"
 // import ErrorPage from ".components"
+// const [user, setUser] = useState(null);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <AppProvider>
     <BrowserRouter>
-      <Routes>
+    <App/>
+      {/* <Routes>
         <Route path = "/" element = {<Home />}>
           <Route path = "about" element = {<About />} />
+          <Route path = "login" element = {<Login onLogin={setUser} />} />
           <Route path = "book" element = {<BookList />} />
-          <Route path = "/book/:id" element = {<BookDetails />} />
+          <Route path = "/book/:id" element = {<BookDetails />} /> 
           <Route path = "showall" element = {<BookListAll />} />
+          <Route path = "signup" element = {<SignUpForm />} />
         </Route>
-      </Routes>
+      </Routes> */}
     </BrowserRouter>
   </AppProvider>
 );
 
 // moved all imports into routes.js 
+// Then rewrote all the routes through here.
+
 // import Home from "./pages/Home";
 // import About from "./pages/About";
 // import Login from "./pages/Login";

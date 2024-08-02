@@ -11,6 +11,7 @@ import "./BookListAll.css";
 //https://covers.openlibrary.org/b/id/240727-S.jpg
 
 const BookListAll = () => {
+    
     // In this method, we do a GET request from the backend at
     // localhost:5555/showall
     // Save the results into an array of JSON objects

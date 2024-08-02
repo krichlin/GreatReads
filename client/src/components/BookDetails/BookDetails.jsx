@@ -10,9 +10,22 @@ import { useNavigate } from 'react-router-dom';
 
 const URL = "https://openlibrary.org/works/";
 
-// const handleClick((book) => {
-    
-// })
+const handleAdd = ((book) => {
+  console.log("clicked add")
+    // Do magic POST call here to CREATE new book to db tables
+    // This is where we add the book to the library.
+});
+
+const handleRemove = ((book) => {
+  console.log("clicked remove")
+    // Do magic DELETE here to REMOVE book to db
+    // This is where we remove a book from the database.
+  fetch(`http://127.0.0.1:5555/books/${book.id}`,{
+    method: "DELETE",
+  })
+    .then((r) => r.json())
+    // .then((deletedBook) => onDeleteBook(deletedBook))  // this undefined right now
+});
 
 const BookDetails = () => {
   const {id} = useParams();
@@ -29,22 +42,26 @@ const BookDetails = () => {
         // console.log(data);
 
         if(data){
-          console.log(data);
+          // console.log(data);
           const {description, title, covers, subject_places, subject_times, subjects} = data;
           // destructure data into bits
-          // create a newBook object with those bits
+          // create a newBook object with those bits, but also includes the cover URL
           const newBook = {
             description: description ? description.value : "No description found",
             title: title,
             cover_img: covers ? `https://covers.openlibrary.org/b/id/${covers[0]}-L.jpg` : coverImg,
             subject_places: subject_places ? subject_places.join(", ") : "No subject places found",
             subject_times : subject_times ? subject_times.join(", ") : "No subject times found",
-            subjects: subjects ? subjects.join(", ") : "No subjects found"
+            subjects: subjects ? subjects.join(", ") : "No subjects found",
+            id: id
           };
           setBook(newBook);
+          console.log("🚀 ~ getBookDetails ~ newBook:", newBook)
+           // What on earth does this thing even look liek?
         } else {
           setBook(null);
         }
+         
         setLoading(false);
       } catch(error){
         console.log(error);
@@ -76,6 +93,10 @@ const BookDetails = () => {
               <span>{book?.description}</span>
             </div>
             <div className='book-details-item'>
+              <span className='fw-6'>Open Library OLID: </span>
+              <span className='text-italic'>{id}</span>
+            </div>
+            <div className='book-details-item'>
               <span className='fw-6'>Subject Places: </span>
               <span className='text-italic'>{book?.subject_places}</span>
             </div>
@@ -87,11 +108,12 @@ const BookDetails = () => {
               <span className='fw-6'>Subjects: </span>
               <span>{book?.subjects}</span>
             </div>
-            <div className='book-details-button'>
-                <button>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
-                {/* <button type='button' className='flex flex-c' onClick={() => handleClick(book)}>
-                  CLICK HERE TO ADD BOOK TO YOUR LIBRARY
-                </button> */}
+            <div className='book-add-button'>
+                <button type='button' className='flex flex-c' onClick={(book) => (handleAdd(book))}>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
+                {/* this button took forever to get working, had to send it an arrow function because function was invoked not passed */}
+            </div>
+            <div className='book-remove-button'>
+                <button type='button' className='flex flex-c' onClick={(book) => (handleRemove(book))}>CLICK HERE TO REMOVE BOOK FROM YOUR LIBRARY </button>
             </div>
           </div>
         </div>

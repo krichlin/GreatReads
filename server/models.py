@@ -19,17 +19,23 @@ from config import db, bcrypt
 
 # Models go here!
 
+
+
+
+
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
 
     serialize_rules = ('-books.user', '-reviews.user','-_password_hash',)
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    _password_hash = db.Column(db.String(200), nullable=True)
+    _password_hash = db.Column(db.String(200))
     image_url = db.Column(db.String(500), nullable=True)
     bio = db.Column(db.String(500), nullable=True)
+    f_name = db.Column(db.String(20), nullable=False)
+    l_name = db.Column(db.String(20), nullable=False)
 
     libraries = db.relationship('Library', backref='user_library', lazy=True)
     reviews = db.relationship('Review', backref='user_review', lazy=True)
@@ -41,7 +47,8 @@ class User(db.Model, SerializerMixin):
 
     @hybrid_property
     def password_hash(self):
-        raise AttributeError('Password hashes may not be viewed.')
+        return self._password_hash
+        # raise AttributeError('Password hashes may not be viewed.')
 
     @password_hash.setter
     def password_hash(self, password):

@@ -1,30 +1,30 @@
-/* pages/ShowAll/ShowAll.css */
+/* pages/Login/Login.css */
 
-.showall{
+.login{
     padding: 3rem 0;
 }
-.showall-content{
+.login-content{
     gap: 4rem;
 }
-.showall-title{
+.login-title{
     margin: 1rem 0;
 }
-.showall-img img{
+.login-img img{
     max-width: 520px;
 }
-.showall-text p{
+.login-text p{
     margin: 1.8rem 0;
     opacity: 0.8;
 }
 
 @media screen and (min-width: 800px){
-    .showall-content{
+    .login-content{
         grid-template-columns: repeat(2, 1fr);
     }
-    .showall-title{
+    .login-title{
         margin-top: 0;
     }
-    .showall-img img{
+    .login-img img{
         margin-left: 0;
     }
 }

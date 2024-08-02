@@ -15,7 +15,7 @@ from sqlalchemy import MetaData
 
 # Instantiate app, set attributes
 app = Flask(__name__)
-app.secret_key = b'Y\xf1Xz\x00\xad|eQ\x80t \xca\x1a\x10K'
+app.secret_key = b'p\x92r/o\xef6k\xe3\x82\xab\xf8Pb\xf3S'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.json.compact = False
@@ -38,7 +38,7 @@ CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 @app.route("/")
 def helloWorld():
-    return '<h1>Project Server</h1>'
+    return ('<h1>Welcome to the GreatReads Project Server</h1><p>Good things to ask for might be:</p><p>signup login logout allbooks user addbook books check_session</p>');
 
 @app.route("/api/v1/users")
 def list_users():

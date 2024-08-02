@@ -1,33 +1,52 @@
-// Login.js
+import { useState } from "react";
+import styled from "styled-components";
+import LoginForm from "../../components/LoginForm/LoginForm";
+import SignUpForm from "../../components/SignUpForm/SignUpForm";
+import { Button } from "../../styles";
 
-import Navbar from "../components/Navbar/Navbar"
+function Login({ onLogin }) {
+  const [showLogin, setShowLogin] = useState(true);
+    console.log("Login Test", onLogin)
+  return (
+    <Wrapper>
+      <h2>Login to GreatReads</h2>
+      {showLogin ? (
+        <>
+          <LoginForm onLogin={onLogin} />
+          <Divider />
+          <p>
+            Don't have an account? &nbsp;
+            <Button color="secondary" onClick={() => setShowLogin(false)}>
+              Sign Up
+            </Button>
+          </p>
+        </>
+      ) : (
+        <>
+          <SignUpForm onLogin={onLogin} />
+          <Divider />
+          <p>
+            Already have an account? &nbsp;
+            <Button color="secondary" onClick={() => setShowLogin(true)}>
+              Log In
+            </Button>
+          </p>
+        </>
+      )}
+    </Wrapper>
+  );
+}
 
-// add functionality here to use a demo account while auth isn't working
+const Wrapper = styled.section`
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 16px;
+`;
 
-function Login() {
-    return (
-      <>
-        <header>
-          <Navbar />
-        </header>
-        <main>
-          <h1>Login</h1>
-          <form>
-            <div>
-              <label for="username">Username: </label>
-              <input id="username" type="text" name="username" placeholder="Username" />
-            </div>
-            <br/>
-            <div>
-              <label for="password">Password: </label>
-              <input id="password" type="password" name="password" placeholder="Password" />
-            </div>
-            <br/>
-            <button type="submit">Submit</button>
-          </form>
-        </main>
-      </>
-    );
-  };
-  
-  export default Login;
+const Divider = styled.hr`
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin: 16px 0;
+`;
+
+export default Login;
