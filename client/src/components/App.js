@@ -14,7 +14,7 @@ import BookListAll from './/../components/BookListAll/BookListAll';
 import SignUpForm from './/../components/SignUpForm/SignUpForm';
 import Navbar from './/../components/Navbar/Navbar';
 import MyLibrary from './/../pages/MyLibrary/MyLibrary';
-
+import MyProfile from './/../pages/MyProfile/MyProfile';
 
 
 // const SpaceContext = createContext();
@@ -49,6 +49,7 @@ function App() {
           <Route path = "showall" element = {<BookListAll />} />
           <Route path = "signup" element = {<SignUpForm />} />
           <Route path = "mylibrary" element = {<MyLibrary />} />
+          <Route path = "myprofile" element = {<MyProfile />} />
         </Route>
       </Routes>
       {/* Show My Library Here Once It's Working  */}
