@@ -12,6 +12,7 @@ import BookList from './/../components/BookList/BookList';
 import BookDetails from './/../components/BookDetails/BookDetails';
 import BookListAll from './/../components/BookListAll/BookListAll';
 import SignUpForm from './/../components/SignUpForm/SignUpForm';
+import Navbar from './/../components/Navbar/Navbar';
 
 
 
@@ -36,6 +37,7 @@ function App() {
   return (
     <>
       <h2>Welcome, {user.username}!</h2>
+      <Navbar/>
       <Header/>
       <Routes>
         <Route path = "/" element = {<Home />}>

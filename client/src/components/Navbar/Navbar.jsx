@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logoImg from "../../images/logo.png";
-import bannerImg from "../../images/Greatreads.png"
+
 import {HiOutlineLogout, HiOutlineMenuAlt3} from "react-icons/hi";
 
 const Navbar = ( onLogout ) => {
@@ -20,8 +20,7 @@ const Navbar = ( onLogout ) => {
 
   return (
     <nav className='navbar' id = "navbar">
-      {/* This banner looks terrible, find a way to fix it with flex - KDR */}
-      <img src = {bannerImg} alt="banner" align='center'/>
+
       <div className='container navbar-content flex'>
         <div className='brand-and-toggler flex flex-sb'>
           <Link to = "/" className='navbar-brand flex'>
