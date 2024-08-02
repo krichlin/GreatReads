@@ -9,7 +9,7 @@ function Login({ onLogin }) {
     console.log("Login Test", onLogin)
   return (
     <Wrapper>
-      <Logo>GreatReads Login</Logo>
+      <h2>Login to GreatReads</h2>
       {showLogin ? (
         <>
           <LoginForm onLogin={onLogin} />
@@ -36,13 +36,6 @@ function Login({ onLogin }) {
     </Wrapper>
   );
 }
-
-const Logo = styled.h1`
-  font-family: "Permanent Marker", cursive;
-  font-size: 3rem;
-  color: deeppink;
-  margin: 8px 0 16px;
-`;
 
 const Wrapper = styled.section`
   max-width: 500px;

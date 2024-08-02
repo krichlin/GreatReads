@@ -54,6 +54,9 @@ const Navbar = ( onLogout ) => {
             <li className='nav-item'>
               <Link to = "signup" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>signup</Link>
             </li>
+            <li className='nav-item'>
+              <Link to = "mylibrary" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>my library</Link>
+            </li>
           </ul>
         </div>
       </div>

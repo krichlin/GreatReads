@@ -13,6 +13,7 @@ import BookDetails from './/../components/BookDetails/BookDetails';
 import BookListAll from './/../components/BookListAll/BookListAll';
 import SignUpForm from './/../components/SignUpForm/SignUpForm';
 import Navbar from './/../components/Navbar/Navbar';
+import MyLibrary from './/../pages/MyLibrary/MyLibrary';
 
 
 
@@ -47,6 +48,7 @@ function App() {
           <Route path = "/book/:id" element = {<BookDetails />} /> 
           <Route path = "showall" element = {<BookListAll />} />
           <Route path = "signup" element = {<SignUpForm />} />
+          <Route path = "mylibrary" element = {<MyLibrary />} />
         </Route>
       </Routes>
       {/* Show My Library Here Once It's Working  */}
