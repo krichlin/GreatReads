@@ -23,6 +23,14 @@ Get the latest version of the project [On our Github Page](https://github.com/kr
 
 ## User Stories
 
+As a User, I can:
+* Securely Create a new account
+* Search for Books on OpenLibrary's API
+* Save Books to My Library
+* View and edit my account info, or delete my account. 
+* Post new reviews for books, and see all the reviews I've written.
+* Edit or Remove reviews I've written
+
 New users to the site will be greeted by the Login Page.  They will be invited to login to the site with their credentials, or to click on Sign Up to create a new account.
 
 After account creation and login, users will be able to search the Open Library database by typing into the search bar.  The search will return relevant books by Author, Title, or ISBN.  These search results (up to a maximum of 20) will populate at the bottom of the search page, and display some key information about the books.
