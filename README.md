@@ -94,8 +94,8 @@ We use the [OpenLibrary API](http://openlibrary.org/developers/api).
 ### Frontend Packages (JavaScript and React)
 * React Router - To integrate navigation in a single page web app.
 * React Icons - For pretty buttons
-* React Redux - For state management of user
 * React Bootstrap - For Styling
+* useContext for user state management
 * Formik - For Login and Signup forms
 * Yup - For Validation and Error Handling of login and signup
 
