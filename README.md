@@ -4,11 +4,18 @@ GreatReads is a book-finding web application which leverages the [Open Library A
 
 ## Table of Contents
 
-## Wireframe (coming soon, for now, screenshots)
+## Wireframe 
 
-![greatreads screenshot](greatreads_screenshot.png)
-![count zero book info](count_zero.png)
-![alice in wonderland search results](search_results_alice.jpeg)
+![About Page](AboutPage.png)
+![Book Detail Page](BookDetailPage.png)
+![Book Review Page](BookReviewPage.png)
+![Collapsable Navbar](CollapsableTaskbar.png)
+![Login Page](LoginPage.png)
+![My Library Page](MyLibraryPage.png)
+![My Profile Page](MyProfilePage.png)
+![Search Page (home)](SearchPage.png)
+![Search Results Page](SearchResultsPage.png)
+![Signup Page](SignupPage.png)
 
 ## Github
 
@@ -88,6 +95,12 @@ We use the [OpenLibrary API](http://openlibrary.org/developers/api).
 * SQLAlchemy 
 * Flask RESTful
 * Bcrypt - Password encryption and salting
+
+## Screenshots
+
+![greatreads screenshot](greatreads_screenshot.png)
+![count zero book info](count_zero.png)
+![alice in wonderland search results](search_results_alice.jpeg)
 
 ## Setup Instructions
 
