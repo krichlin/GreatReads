@@ -12,8 +12,31 @@ const URL = "https://openlibrary.org/works/";
 
 const handleAdd = ((book) => {
   console.log("clicked add")
+  //destructure book here?
+  console.log(book)
+
     // Do magic POST call here to CREATE new book to db tables
     // This is where we add the book to the library.
+        // Do magic DELETE here to REMOVE book to db
+    // This is where we remove a book from the database.
+  fetch(`http://127.0.0.1:5555/addbook`,{
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      // author,
+      // description,
+      // title,
+      // cover_img,
+      // subject_places,
+      // subject_times,
+      // subjects,
+      // id,
+    }),
+  })
+    .then((r) => r.json())
+    // .then((deletedBook) => onDeleteBook(deletedBook))  // this undefined right now
 });
 
 const handleRemove = ((book) => {
@@ -39,11 +62,11 @@ const BookDetails = () => {
       try{
         const response = await fetch(`${URL}${id}.json`);
         const data = await response.json();
-        // console.log(data);
+        //console.log(data);
 
         if(data){
-          // console.log(data);
-          const {description, title, covers, subject_places, subject_times, subjects} = data;
+          console.log(data);
+          const {description, title, covers, subject_places, subject_times, subjects, authors} = data;
           // destructure data into bits
           // create a newBook object with those bits, but also includes the cover URL
           const newBook = {
@@ -52,16 +75,19 @@ const BookDetails = () => {
             cover_img: covers ? `https://covers.openlibrary.org/b/id/${covers[0]}-L.jpg` : coverImg,
             subject_places: subject_places ? subject_places.join(", ") : "No subject places found",
             subject_times : subject_times ? subject_times.join(", ") : "No subject times found",
+            authors: authors ? authors.join(", ") : "No Authors Found",
             subjects: subjects ? subjects.join(", ") : "No subjects found",
+            // author : authors ? authors.join(", ") : "No Authors Found",
             id: id
           };
           setBook(newBook);
+          
           console.log("🚀 ~ getBookDetails ~ newBook:", newBook)
            // What on earth does this thing even look liek?
         } else {
           setBook(null);
         }
-         
+
         setLoading(false);
       } catch(error){
         console.log(error);
@@ -87,11 +113,21 @@ const BookDetails = () => {
           </div>
           <div className='book-details-info'>
             <div className='book-details-item title'>
-              <span className='fw-6 fs-24'>{book?.title}</span>
+              <span className='fw-6 fs-24'>Title: {book?.title}</span>
             </div>
-            <div className='book-details-item description'>
+
+            {/* This one doesn't render for some reason. */}
+            {/* <div className='book-details-item description'>
               <span>{book?.description}</span>
+            </div> */}
+
+            {/* Author not being passed in for some reason? */}
+            <div className= 'book-details-item'>
+              <span className='fw-6'>Author:</span>
+              <span className='text-italic'>{book?.author}</span>
             </div>
+
+
             <div className='book-details-item'>
               <span className='fw-6'>Open Library OLID: </span>
               <span className='text-italic'>{id}</span>
@@ -108,6 +144,12 @@ const BookDetails = () => {
               <span className='fw-6'>Subjects: </span>
               <span>{book?.subjects}</span>
             </div>
+
+            <div className='book-details-item'>
+              <span className='fw-6'>Description: </span>
+              <span>{book?.description}</span>
+            </div>
+
             <div className='book-add-button'>
                 <button type='button' className='flex flex-c' onClick={(book) => (handleAdd(book))}>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
                 {/* this button took forever to get working, had to send it an arrow function because function was invoked not passed */}
@@ -121,7 +163,5 @@ const BookDetails = () => {
     </section>
   )
 }
-
-
 
 export default BookDetails

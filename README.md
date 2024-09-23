@@ -123,6 +123,4 @@ We use the [OpenLibrary API](http://openlibrary.org/developers/api).
 
 ### Front End
 - In a new terminal window, enter the client directory and type `npm install` to install necessary packages.
-- To start the JSON server, enter /client directory and type `json-server --watch db.json --port 4000`
-- check `localhost:4000/users` for JSON data
 - To Launch, Open a new termainl window, enter the client directory and type `npm start` 

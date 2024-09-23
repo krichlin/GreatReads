@@ -103,8 +103,8 @@ if __name__ == '__main__':
             # ),
         ]
 
-        print("Seeding Fake Users")
-        db.session.add_all(users)
+        # print("Seeding Fake Users")
+        # db.session.add_all(users)
 
         # # make sure users have unique usernames
         # users = []
