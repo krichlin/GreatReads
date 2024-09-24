@@ -13,6 +13,7 @@ import Friends from "./pages/Friends";
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
 import MyProfile from "./pages/MyProfile";
+import Logout from ".pages/Logout";
 
 const routes = [
     {
@@ -29,6 +30,11 @@ const routes = [
         path: "/login",
         element: <Login />,
         errorElement: <ErrorPage />
+    },
+    {   path: "/logout",
+        element: <Logout />,
+        errorElement: <ErrorPage />
+
     },
     {
         path: "/profile/:id",

@@ -34,7 +34,11 @@ if __name__ == '__main__':
                 edition_count=745,
                 first_publish_year=1900,
                 olid="OL262460W",
-                title= "The Lost World"
+                title= "The Lost World",
+                subjects="Adventure stories, Atlantis, Dinosaurs, Discovery and exploration, English Detective and mystery stories, Fiction, Fiction in French, Prehistoric peoples, Professor Challenger (Fictitious character), Scientific expeditions, Translations into Czech, Translations into Russian, Science fiction, Fantasy, Discoveries in geography, Children's fiction, Dinosaurs, fiction, Fiction, fantasy, general, Fiction, action & adventure, Challenger, professor (fictitious character), fiction, South america, fiction, Books and reading, Public libraries, Activity programs, Criticism and interpretation, Reading promotion, Young adults' libraries, Westminster Libraries and Archives, Youth, Lost world (Doyle, Arthur Conan), Children, British and irish fiction (fictional works by one author), Fiction, science fiction, general, Scientists, fiction, English literature, Large type books, Fiction, historical, general, Romans, nouvelles, Dinosaures, Challenger, Professor (Personaje literario), Novela, Pueblos prehistóricos, Dinosaurios, Adventure and adventurers, fiction, Fiction, general, Challenger, Professor (Fictitious character) -- Fiction, Fantasy fiction, South America -- Fiction, Prehistoric peoples -- Fiction, Dinosaurs -- Fiction, Literature and fiction, action and adventure, New York Times reviewed, Prehistoric peoples, fiction, Scientific expeditions, fiction, South America",
+                subject_times="No subject times found",
+                subject_places="South America, England, London",
+                description="Journalist Ed Malone is looking for an adventure, …ungle, to a lost world where dinosaurs roam free."
             ),
 
             Book(
@@ -45,6 +49,11 @@ if __name__ == '__main__':
                 edition_count=3559,
                 first_publish_year=1865,
                 olid="OL138052W"
+                title="",
+                subjects="",
+                subject_times="",
+                subject_places="",
+                description=""
             ),
             Book(
                 description="Turner, corporate mercenary, wakes in a reconstructed body, a beautiful woman by his side. Then Hosaka Corporation reactivates him for a mission more dangerous than the one he's recovering from: Maas-Neotek's chief of R&D is defecting. Turner is the one assigned to get him out intact, along with the biochip he's perfected. But this proves to be of supreme interest to certain other parties--some of whom aren't remotely human.\r\n\r\nBobby Newmark is entirely human: a rustbelt data-hustler totally unprepared for what comes his way when the defection triggers war in cyberspace. With voodoo on the Net and a price on his head, Newmark thinks he's only trying to get out alive.\r\n\r\nThe second novel of William Gibson's Sprawl trilogy, *Count Zero* is a stylish, streetsmart, frighteningly probable parable of the future and sequel to Neuromancer.",
@@ -55,6 +64,11 @@ if __name__ == '__main__':
                 edition_count= 29,
                 first_publish_year="1986",
                 olid="OL27256W",
+                title="",
+                subjects="",
+                subject_times="",
+                subject_places="",
+                description=""
             ),
         ]
         
@@ -101,7 +115,7 @@ if __name__ == '__main__':
             #     _password_hash='Obliter8!',
             #     image_url='https://media.licdn.com/dms/image/C5603AQH6PkKUrbzJ4w/profile-displayphoto-shrink_200_200/0/1625325706900?e=2147483647&v=beta&t=pdWFc6dtEy_QW5S8cyGmER2jLIm-tiOp7R9u2HZl38E'
             # ),
-        ]
+
 
         # print("Seeding Fake Users")
         # db.session.add_all(users)

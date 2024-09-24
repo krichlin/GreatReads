@@ -148,13 +148,20 @@ class Signup(Resource):
         except IntegrityError as e:
             print(e)
             return make_response({"error":"422 Unprocessable Entity", "details": str(e)}, 422)
-        
+
+class MyProfile(Resource):
+    def get(self):
+        print("trying to get profile here")
+        user = User.query.filter(User.id == session.get('user_id')).first()
+        if user:
+            return user.to_dict()
+        else:
+            return { 'message': '401: Not Authorized'}, 401
+
 class Logout(Resource):
-    def delete(self): # just add this line!
-        print("trying to log out here")
-        # session['user_id'] = None
+    def delete(self):
+        print("trying to log out")
         session.pop('user_id', None)
-        # return {'message': '204: No Content'}, 204
         return make_response({}, 204)
     
 class Home(Resource):
@@ -244,7 +251,6 @@ class BookById(Resource):
 #     def get(self,id):
 #         books = 
 
-
 api.add_resource(Home, '/')
 api.add_resource(CheckSession, '/check_session')
 api.add_resource(Signup, '/signup')
@@ -256,6 +262,7 @@ api.add_resource(UserById, '/user/<int:id>')
 api.add_resource(AddBook, '/addbook')
 api.add_resource(Books, '/books')
 api.add_resource(BookById, '/books/<int:id>')
+api.add_resource(MyProfile, '/myprofile') 
 
 # api.add_resource(MyLibrary, '/mylibrary')
 
