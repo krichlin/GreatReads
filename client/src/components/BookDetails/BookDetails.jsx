@@ -14,7 +14,6 @@ const handleAdd = ((book) => {
   console.log("clicked add")
   //destructure book here?
   console.log(book)
-
     // Do magic POST call here to CREATE new book to db tables
     // This is where we add the book to the library.
         // Do magic DELETE here to REMOVE book to db
@@ -25,7 +24,7 @@ const handleAdd = ((book) => {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      // author,
+         author: book.author,
       // description,
       // title,
       // cover_img,
@@ -83,7 +82,8 @@ const BookDetails = () => {
           setBook(newBook);
           
           console.log("🚀 ~ getBookDetails ~ newBook:", newBook)
-           // What on earth does this thing even look liek?
+          // Handle Add New Book.
+          // What on earth does this thing even look liek?
         } else {
           setBook(null);
         }

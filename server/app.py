@@ -181,7 +181,6 @@ class UserById(Resource):
         else:
             return make_response({'error': 'User not found'}, 404)
     
-
 class AddBook(Resource):
     def post(self):
         try:
@@ -204,6 +203,8 @@ class AddBook(Resource):
             db.session.add(booktoadd)
 
             # Do something more here to add this book to the user's library? before returning?
+
+            db.session.commit()
 
             return make_response(booktoadd.to_dict(rules=()), 201)
         

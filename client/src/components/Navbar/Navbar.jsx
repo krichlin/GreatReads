@@ -4,23 +4,27 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import "./Navbar.css";
 import logoImg from "../../images/logo.png";
+import Button from "./Button";
 
 import {HiOutlineLogout, HiOutlineMenuAlt3} from "react-icons/hi";
 
-const Navbar = ( onLogout ) => {
+const Navbar = ( user, setUser ) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleNavbar = () => setToggleMenu(!toggleMenu);
 
-  function handleLogout() {
+  function handleLogoutClick() {
     fetch("/logout", {
       method: "DELETE",
     })
-    .then(() => onLogout());
+    .then((r) => {
+      if (r.ok) {
+        setUser(null);
+      }
+    });
   } 
 
   return (
     <nav className='navbar' id = "navbar">
-
       <div className='container navbar-content flex'>
         <div className='brand-and-toggler flex flex-sb'>
           <Link to = "/" className='navbar-brand flex'>
@@ -45,9 +49,9 @@ const Navbar = ( onLogout ) => {
             <li className='nav-item'>
               <Link to = "showall" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>showall</Link>
             </li>
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link to = "logout" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>logout</Link>
-            </li>
+            </li> */}
             <li className='nav-item'>
               <Link to = "login" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>login</Link>
             </li>
@@ -59,6 +63,11 @@ const Navbar = ( onLogout ) => {
             </li>
             <li className='nav-item'>
               <Link to = "myprofile" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>my profile</Link>
+            </li>
+            <li className='nav-item'>
+              <Button variant="outline" onClick={handleLogoutClick}>
+                Logout
+              </Button>
             </li>
           </ul>
         </div>
