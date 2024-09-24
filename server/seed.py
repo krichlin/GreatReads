@@ -64,34 +64,34 @@ if __name__ == '__main__':
 
         # Make Some Fake Users
 
-        users = [
-            User(
-                username='HarryPotter',
-                email='HarryPotter@hogworts.edu',
-                bio='Hello, I am Harry Potter.  Pleased to meet you.',
-                f_name='Harry',
-                l_name='Potter',
-                _password_hash="password123!",
-                image_url='https://static.wikia.nocookie.net/neoencyclopedia/images/4/44/HarryPotter5poster.jpg'
-            ),
-            User(
-                username='HermioneGranger',
-                email='HermioneGranger@hogworts.edu',
-                bio='I am Hermione Grainger.  I like books about magic.',
-                f_name='Hermione',
-                l_name='Granger',
-                _password_hash="password321!",
-                image_url='https://i0.wp.com/the-art-of-autism.com/wp-content/uploads/2022/12/Hermione-Granger.jpg'
-            ),
-            User(
-                username='AlbusDumbledore',
-                email='Headmaster@hogworts.edu',
-                bio='I am the Headmaster of Hogworts School of Witchcraft and Wizardry.',
-                f_name='Albus',
-                l_name='Dumbledore',
-                _password_hash='password456!',
-                image_url='https://static.wikia.nocookie.net/100gamesvictorfanficstories/images/a/ac/Albus_Dumbledore.jpg'
-            ),
+        # users = [
+        #     User(
+        #         username='HarryPotter',
+        #         email='HarryPotter@hogworts.edu',
+        #         bio='Hello, I am Harry Potter.  Pleased to meet you.',
+        #         f_name='Harry',
+        #         l_name='Potter',
+        #         _password_hash="password123!",
+        #         image_url='https://static.wikia.nocookie.net/neoencyclopedia/images/4/44/HarryPotter5poster.jpg'
+        #     ),
+        #     User(
+        #         username='HermioneGranger',
+        #         email='HermioneGranger@hogworts.edu',
+        #         bio='I am Hermione Grainger.  I like books about magic.',
+        #         f_name='Hermione',
+        #         l_name='Granger',
+        #         _password_hash="password321!",
+        #         image_url='https://i0.wp.com/the-art-of-autism.com/wp-content/uploads/2022/12/Hermione-Granger.jpg'
+        #     ),
+        #     User(
+        #         username='AlbusDumbledore',
+        #         email='Headmaster@hogworts.edu',
+        #         bio='I am the Headmaster of Hogworts School of Witchcraft and Wizardry.',
+        #         f_name='Albus',
+        #         l_name='Dumbledore',
+        #         _password_hash='password456!',
+        #         image_url='https://static.wikia.nocookie.net/100gamesvictorfanficstories/images/a/ac/Albus_Dumbledore.jpg'
+        #     ),
             # User(
             #     username='krichlin',
             #     email='krichlin@gmail.com',

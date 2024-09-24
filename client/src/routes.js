@@ -12,6 +12,7 @@ import MyLibrary from "./pages/MyLibrary";
 import Friends from "./pages/Friends";
 import BookList from "./components/BookList/BookList";
 import BookDetails from "./components/BookDetails/BookDetails";
+import MyProfile from "./pages/MyProfile";
 
 const routes = [
     {
@@ -62,7 +63,13 @@ const routes = [
         path: "/book/:id",
         element: <BookDetails />,
         errorElement: <ErrorPage />
+    },
+    {
+        path: "/myprofile",
+        element: <MyProfile />,
+        errorElement: <ErrorPage />
     }
+
 ];
 
 export default routes;
