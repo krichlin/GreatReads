@@ -184,25 +184,38 @@ class UserById(Resource):
 class AddBook(Resource):
     def post(self):
         try:
-            data = request.json
+            data = request.get_json()
             booktoadd = Book(
-                title= data['title'],
-                author= data['author'],
-                cover_id= data['cover_id'],
-                cover_img= data['cover_img'],
-                subjects= data['subjects'],
-                subject_places= data['subject_places'],
-                subject_times=data['subject_times'],
-                edition_count=data['edition_count'],
-                first_publish_year=data['first_publish_year'],
-                olid=data['olid'],
-                average_rating=data['average_rating'],
-                description=data['description'],
-                genre=data['genre']
+                title=data.get('title'),
+                author=data.get('author'),
+                cover_id=data.get('cover_id'),
+                cover_img=data.get('cover_img'),
+                subjects=data.get('subjects'),
+                subject_places=data.get('subject_places'),
+                subject_times=data.get('subject_times'),
+                edition_count=data.get('edition_count'),
+                first_publish_year=data.get('first_publish_year'),
+                olid=data.get('olid'),
+                description=data.get('description'),
             )
+            # booktoadd = Book(
+            #     title= data.['title'],
+            #     author= data['author'],
+            #     cover_id= data['cover_id'],
+            #     cover_img= data['cover_img'],
+            #     subjects= data['subjects'],
+            #     subject_places= data['subject_places'],
+            #     subject_times=data['subject_times'],
+            #     edition_count=data['edition_count'],
+            #     first_publish_year=data['first_publish_year'],
+            #     olid=data['olid'],
+            #     average_rating=data['average_rating'],
+            #     description=data['description'],
+            #     genre=data['genre']
+            # )
             db.session.add(booktoadd)
 
-            # Do something more here to add this book to the user's library? before returning?
+            # Do something more here to add this book to the current user's library? before returning?
 
             db.session.commit()
 

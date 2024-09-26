@@ -16,26 +16,28 @@ const handleAdd = ((book) => {
   console.log(book)
     // Do magic POST call here to CREATE new book to db tables
     // This is where we add the book to the library.
-        // Do magic DELETE here to REMOVE book to db
-    // This is where we remove a book from the database.
+
   fetch(`http://127.0.0.1:5555/addbook`,{
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-         author: book.author,
-      // description,
-      // title,
-      // cover_img,
-      // subject_places,
-      // subject_times,
-      // subjects,
-      // id,
+        title: book.title,
+        author: book.author[0], // authors is an array, just take the 0th entry.
+        cover_id: book.cover_id,
+        cover_img: book.cover_img,
+        subjects: book.subjects,
+        subject_places: book.subject_places, 
+        subject_times: book.subject_times,
+        edition_count: book.edition_count,
+        first_publish_year: book.first_publish_year,
+        olid: book.olid,
+        description: book.description,
     }),
   })
     .then((r) => r.json())
-    // .then((deletedBook) => onDeleteBook(deletedBook))  // this undefined right now
+    // Do something with response here?
 });
 
 const handleRemove = ((book) => {
@@ -65,7 +67,8 @@ const BookDetails = () => {
 
         if(data){
           console.log(data);
-          const {description, title, covers, subject_places, subject_times, subjects, authors} = data;
+          const {description, title, covers, subject_places, subject_times, subjects} = data;
+          const authors = data.authors;
           // destructure data into bits
           // create a newBook object with those bits, but also includes the cover URL
           const newBook = {
@@ -76,7 +79,6 @@ const BookDetails = () => {
             subject_times : subject_times ? subject_times.join(", ") : "No subject times found",
             authors: authors ? authors.join(", ") : "No Authors Found",
             subjects: subjects ? subjects.join(", ") : "No subjects found",
-            // author : authors ? authors.join(", ") : "No Authors Found",
             id: id
           };
           setBook(newBook);
