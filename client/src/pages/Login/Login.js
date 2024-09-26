@@ -4,15 +4,15 @@ import LoginForm from "../../components/LoginForm/LoginForm";
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 import { Button } from "../../styles";
 
-function Login({ onLogin }) {
+function Login({ user, setUser }) {
   const [showLogin, setShowLogin] = useState(true);
-    console.log("Login Test", onLogin)
+    console.log("Login Test", setUser)
   return (
     <Wrapper>
       <h2>Login to GreatReads</h2>
       {showLogin ? (
         <>
-          <LoginForm onLogin={onLogin} />
+          <LoginForm user={user} setUser={setUser} />
           <Divider />
           <p>
             Don't have an account? &nbsp;
@@ -23,7 +23,7 @@ function Login({ onLogin }) {
         </>
       ) : (
         <>
-          <SignUpForm onLogin={onLogin} />
+          <SignUpForm user={user} setUser={setUser} />
           <Divider />
           <p>
             Already have an account? &nbsp;

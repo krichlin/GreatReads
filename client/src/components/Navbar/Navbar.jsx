@@ -8,7 +8,7 @@ import Button from "./Button";
 
 import {HiOutlineLogout, HiOutlineMenuAlt3} from "react-icons/hi";
 
-const Navbar = ( user, setUser ) => {
+const Navbar = ({ user, setUser }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const handleNavbar = () => setToggleMenu(!toggleMenu);
 

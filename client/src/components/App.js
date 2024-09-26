@@ -15,6 +15,7 @@ import SignUpForm from './/../components/SignUpForm/SignUpForm';
 import Navbar from './/../components/Navbar/Navbar';
 import MyLibrary from './/../pages/MyLibrary/MyLibrary';
 import MyProfile from './/../pages/MyProfile/MyProfile';
+import LoginForm from "./LoginForm/LoginForm";
 
 
 // const SpaceContext = createContext();
@@ -33,23 +34,23 @@ function App() {
     });
   }, []);
 
-  if (!user) return <Login onLogin={setUser} />;
+  if (!user) return <Login setUser={setUser} user={user} />;
 
   return (
     <>
       <h2>Welcome, {user.username}!</h2>
-      <Navbar/>
+      <Navbar setUser={setUser} user={user}/>
       <Header/>
       <Routes>
         <Route path = "/" element = {<Home />}>
-          <Route path = "about" element = {<About />} />
-          <Route path = "login" element = {<Login onLogin={setUser} />} />
-          <Route path = "book" element = {<BookList />} />
+          <Route path = "/about" element = {<About />} />
+          <Route path = "/login" element = {<Login setUser={setUser} user={user} />} />
+          <Route path = "/book" element = {<BookList />} />
           <Route path = "/book/:id" element = {<BookDetails />} /> 
-          <Route path = "showall" element = {<BookListAll />} />
-          <Route path = "signup" element = {<SignUpForm />} />
-          <Route path = "mylibrary" element = {<MyLibrary />} />
-          <Route path = "myprofile" element = {<MyProfile />} />
+          <Route path = "/showall" element = {<BookListAll />} />
+          {/* <Route path = "/signup" element = {<SignUpForm />} /> */}
+          <Route path = "/mylibrary" element = {<MyLibrary />} />
+          <Route path = "/myprofile" element = {<MyProfile />} />
         </Route>
       </Routes>
       {/* Show My Library Here Once It's Working  */}
