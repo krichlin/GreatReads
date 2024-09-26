@@ -123,7 +123,7 @@ const BookDetails = () => {
               <span>{book?.description}</span>
             </div> */}
 
-            {/* Author not being passed in for some reason? */}
+            {/* Author not being passed in for some reason?  Cause it's array? */}
             <div className= 'book-details-item'>
               <span className='fw-6'>Author:</span>
               <span className='text-italic'>{book?.author}</span>
