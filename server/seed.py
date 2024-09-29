@@ -20,7 +20,7 @@ if __name__ == '__main__':
 
         # Reset All Tables in Database, if they exist
         Book.query.delete()
-        User.query.delete()   
+        # User.query.delete()   
         
         # seed file no longer deletes the user table.  Oops
 
