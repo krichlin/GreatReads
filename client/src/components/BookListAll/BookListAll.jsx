@@ -28,6 +28,7 @@ const BookListAll = () => {
     // Return some JSX that displays this data in a format that looks nice
     
     console.log(books)
+    
     return (
         <section className='booklist'>
             <div className='container'>

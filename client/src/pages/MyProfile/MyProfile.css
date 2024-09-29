@@ -12,19 +12,19 @@
 .myprofile-img img{
     max-width: 520px;
 }
-.about-text p{
+.myprofile-text p{
     margin: 1.8rem 0;
     opacity: 0.8;
 }
 
 @media screen and (min-width: 800px){
-    .about-content{
+    .myprofile-content{
         grid-template-columns: repeat(2, 1fr);
     }
-    .about-title{
+    .myprofile-title{
         margin-top: 0;
     }
-    .about-img img{
+    .myprofile-img img{
         margin-left: 0;
     }
 }
