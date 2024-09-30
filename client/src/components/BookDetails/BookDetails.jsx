@@ -14,7 +14,7 @@ const handleAdd = ((book) => {
   console.log("clicked add")
   //destructure book here?
 
-  console.log("🚀 ~ handleAdd ~ book:", book)
+    // console.log("🚀 ~ handleAdd ~ book:", book)
     // Do magic POST call here to CREATE new book to db tables
     // This is where we add the book to the library.
 

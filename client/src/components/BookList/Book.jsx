@@ -6,11 +6,10 @@ import "./BookList.css";
 
   const handleAdd = ((book) => {
     console.log("clicked add")
-    //destructure book here?
-  
-    const title = book.title;
-    console.log(title);
 
+    //destructure book here?  
+    // const title = book.title;
+    // console.log(title);
     // console.log("🚀 ~ handleAdd ~ book:", book)
   
     // Do magic POST call here to CREATE new book to db tables
@@ -26,36 +25,37 @@ import "./BookList.css";
     // It works fine in postman though.  
     // Ask Teacher for Help about this.  
 
-    fetch(`https://127.0.0.1:5555/addbook`,{
+    // let's try destructuring a new dict 'bookparams' that contains only the keys and fields we need.
+
+    const bookparams = {
+      author: book.author[0],
+      title: book.title,
+      cover_img: book.cover_img,
+      cover_id: book.cover_id,
+      subjects: book.subjects,
+      subject_places: book.subject_places, 
+      subject_times: book.subject_times,
+      edition_count: book.edition_count,
+      description: book.description,
+      first_publish_year: book.first_publish_year,
+      olid: book.olid,
+    };
+
+    console.log("🚀 ~ handleAdd ~ bookparams:", bookparams);
+
+    fetch(`http://127.0.0.1:5555/addbook`,{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-          author: book.author,
-          title: title,
-          cover_img: book.cover_img,
-          cover_id: book.cover_id,
-          subjects: book.subjects,
-          subject_places: book.subject_places, 
-          subject_times: book.subject_times,
-          edition_count: book.edition_count,
-          description: book.description,
-          first_publish_year: book.first_publish_year,
-          olid: book.olid
-      }),
+      body: 
+        JSON.stringify(bookparams),
     })
       .then((r) => r.json())
       // Do something with response here?
   });
 
-
-
 const Book = (book) => {
-
-
-
-
   console.log(book.title)
   return (
     <div className='book-item flex flex-column flex-sb'>
@@ -88,7 +88,7 @@ const Book = (book) => {
         </div>
 
         <div className='book-add-button'>
-            <button type='button' className='flex flex-c' onClick={(book) => (handleAdd(book))}>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
+            <button type='button' className='flex flex-c' onClick={() => (handleAdd(book))}>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
               {/* this button took forever to get working, had to send it an arrow function because function was invoked not passed */}
         </div>
 

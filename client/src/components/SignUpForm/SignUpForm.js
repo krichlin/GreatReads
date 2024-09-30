@@ -60,7 +60,8 @@ function SignUpForm({ user }) {
 		})
 			.then((resp) => {
 				if (resp.ok) {
-					resp.json().then((data) => setUser(data));
+					// resp.json().then((data) => setUser(data));
+					// not able to find setUser here. Maybe it's not needed.
 
 					navigate("/"); // This does nothing, our navbar is not set up to do this correctly
 				} else {
@@ -75,12 +76,12 @@ function SignUpForm({ user }) {
 				// }
 			})
 			.then((user) => {
-				setUser(user);
-				// It's having a hard time finding this function setUser.  It's causing
-				// a runtime error.  User is not getting logged in right away.  However
-				// the POST call works so who cares I guess
+				// setUser(user);
+				// // It's having a hard time finding this function setUser.  It's causing
+				// // a runtime error.  User is not getting logged in right away.  However
+				// // the POST call works so who cares I guess
 
-				navigate("/");
+				// navigate("/");
 			});
 		setSubmitting(false);
 	}
