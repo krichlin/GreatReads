@@ -11,35 +11,39 @@ import "./BookList.css";
     const title = book.title;
     console.log(title);
 
-    console.log("🚀 ~ handleAdd ~ book:", book)
+    // console.log("🚀 ~ handleAdd ~ book:", book)
   
     // Do magic POST call here to CREATE new book to db tables
     // This is where we add the book to the library.
     // This post call always fails, and never populates the body correctly.
     // I don't know why.
 
-    console.log(book.title)
-    fetch(`http://127.0.0.1:5555/addbook`,{
+    // console.log(book.title)
+
+    // This Fetch is failing for reasons unknown.  When it gets to the server, none of the 
+    // Parameters are present.  It just says [parameters: (None, None, None, None, None, None, 
+    // [parameters: (None, None, None, None, None, None, None, None, None, None, None, None, None)]
+    // It works fine in postman though.  
+    // Ask Teacher for Help about this.  
+
+    fetch(`https://127.0.0.1:5555/addbook`,{
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-          title: book.title,
           author: book.author,
-          cover_id: book.cover_id,
+          title: title,
           cover_img: book.cover_img,
+          cover_id: book.cover_id,
           subjects: book.subjects,
           subject_places: book.subject_places, 
           subject_times: book.subject_times,
           edition_count: book.edition_count,
-          first_publish_year: book.first_publish_year,
-          olid: book.olid,
-          average_rating: "",
           description: book.description,
-          genre: "",
+          first_publish_year: book.first_publish_year,
+          olid: book.olid
       }),
-      
     })
       .then((r) => r.json())
       // Do something with response here?
