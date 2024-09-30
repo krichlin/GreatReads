@@ -201,7 +201,7 @@ class AddBook(Resource):
 
             db.session.add(booktoadd)
 
-            # Do something more here to add this book to the current user's library? before returning?
+            # Do something more here to add this book to the current user's library? before returning?  Link it to user's session ID?
 
             db.session.commit()
 
