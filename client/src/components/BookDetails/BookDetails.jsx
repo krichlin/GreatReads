@@ -41,16 +41,21 @@ const handleAdd = ((book) => {
     // Do something with response here?
 });
 
-const handleRemove = ((book) => {
-  console.log("clicked remove")
-    // Do magic DELETE here to REMOVE book to db
-    // This is where we remove a book from the database.
-  fetch(`http://127.0.0.1:5555/books/${book.id}`,{
-    method: "DELETE",
-  })
-    .then((r) => r.json())
-    // .then((deletedBook) => onDeleteBook(deletedBook))  // this undefined right now
-});
+// This button, and the function and event handler that go with it
+// were both moved to Book.JS. As it turns out, we don't have enough
+// of the params to actually make these calls successfully from 
+// inside this component.  Oops
+
+// const handleRemove = ((book) => {
+//   console.log("clicked remove")
+//     // Do magic DELETE here to REMOVE book to db
+//     // This is where we remove a book from the database.
+//   fetch(`http://127.0.0.1:5555/books/${book.id}`,{
+//     method: "DELETE",
+//   })
+//     .then((r) => r.json())
+//     // .then((deletedBook) => onDeleteBook(deletedBook))  // this undefined right now
+// });
 
 const BookDetails = () => {
   const {id} = useParams();
@@ -157,13 +162,16 @@ const BookDetails = () => {
               <span>{book?.description}</span>
             </div>
 
+            {/*
+            this button took forever to get working, had to send it an arrow function because function was invoked not passed 
             <div className='book-add-button'>
                 <button type='button' className='flex flex-c' onClick={(book) => (handleAdd(book))}>CLICK HERE TO ADD BOOK TO YOUR LIBRARY </button>
-                {/* this button took forever to get working, had to send it an arrow function because function was invoked not passed */}
+                
             </div>
             <div className='book-remove-button'>
                 <button type='button' className='flex flex-c' onClick={(book) => (handleRemove(book))}>CLICK HERE TO REMOVE BOOK FROM YOUR LIBRARY </button>
-            </div>
+            </div>*/}
+
           </div>
         </div>
       </div>
