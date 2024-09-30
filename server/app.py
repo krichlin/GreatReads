@@ -50,33 +50,6 @@ def firstbook():
     book_dict = book.to_dict()
     return make_response(book_dict, 200)
 
-# @app.route('/allbooks')
-# def allbooks():
-#     books = []
-#     for book in Book.query.all():
-#         book_dict = {
-#             "title": book.title,
-#             "author": book.author,
-#             "cover_id": book.cover_id,
-#             "cover_img": book.cover_img,
-#             "description": book.description,
-#             "edition_count": book.edition_count,
-#             "first_publish_year": book.first_publish_year,
-#             "genre": book.genre,
-#             "olid": book.olid,
-#             "reviews": book.reviews,
-#             "subject_places": book.subject_places,
-#             "subject_times": book.subject_times,
-#             "subjects": book.subjects,
-#         }
-#         books.append(book_dict)
-    
-#     response = make_response(
-#         jsonify(books), 200
-#     )
-
-#     return response
-
 @app.route('/books/<int:id>')
 def book_by_id(id):
     book = Book.query.filter(Book.id == id).first()
@@ -172,6 +145,17 @@ class Users(Resource):
     def get(self):
         pass
 
+@app.route('/delete_user/<int:user_id>', methods = ['DELETE'])
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+    try:
+        db.session.delete(user)
+        db.session.commit()
+        return {'message':'User deleted successfully'}, 200
+    except:
+        db.session.rollback()
+        return {'message':'Error deleting user'}, 500
+
 class UserById(Resource):
     def get(self, id):
         user = db.session.get(User, id)
@@ -247,6 +231,8 @@ class BookById(Resource):
         else:
             return make_response({"error": "Book not found"}, 404)
 
+
+
 # class MyLibrary(Resource):
 #     def get(self,id):
 #         books = 
@@ -263,6 +249,7 @@ api.add_resource(AddBook, '/addbook')
 api.add_resource(Books, '/books')
 api.add_resource(BookById, '/books/<int:id>')
 api.add_resource(MyProfile, '/myprofile') 
+# api.add_resource(DeleteAccount, '/deleteaccount')
 
 # api.add_resource(MyLibrary, '/mylibrary')
 
