@@ -10,36 +10,36 @@ import { useNavigate } from 'react-router-dom';
 
 const URL = "https://openlibrary.org/works/";
 
-const handleAdd = ((book) => {
-  console.log("clicked add")
-  //destructure book here?
+// const handleAdd = ((book) => {
+//   console.log("clicked add")
+//   //destructure book here?
 
-    // console.log("🚀 ~ handleAdd ~ book:", book)
-    // Do magic POST call here to CREATE new book to db tables
-    // This is where we add the book to the library.
+//     // console.log("🚀 ~ handleAdd ~ book:", book)
+//     // Do magic POST call here to CREATE new book to db tables
+//     // This is where we add the book to the library.
 
-  fetch(`http://127.0.0.1:5555/addbook`,{
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-        title: book.title,
-        author: book.authors, // authors is an array, just take the 0th entry.
-        cover_id: book.cover_id,
-        cover_img: book.cover_img,
-        subjects: book.subjects,
-        subject_places: book.subject_places, 
-        subject_times: book.subject_times,
-        edition_count: book.edition_count,
-        first_publish_year: book.first_publish_year,
-        olid: book.olid,
-        description: book.description,
-    }),
-  })
-    .then((r) => r.json())
-    // Do something with response here?
-});
+//   fetch(`http://127.0.0.1:5555/addbook`,{
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//         title: book.title,
+//         author: book.authors, // authors is an array, just take the 0th entry.
+//         cover_id: book.cover_id,
+//         cover_img: book.cover_img,
+//         subjects: book.subjects,
+//         subject_places: book.subject_places, 
+//         subject_times: book.subject_times,
+//         edition_count: book.edition_count,
+//         first_publish_year: book.first_publish_year,
+//         olid: book.olid,
+//         description: book.description,
+//     }),
+//   })
+//     .then((r) => r.json())
+//     // Do something with response here?
+// });
 
 // This button, and the function and event handler that go with it
 // were both moved to Book.JS. As it turns out, we don't have enough

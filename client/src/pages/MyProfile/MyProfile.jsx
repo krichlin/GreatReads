@@ -19,8 +19,9 @@ const MyProfile = () => {
 
     console.log("🚀 ~ MyProfile ~ profile:", profile)
     // extract image from profile
-    const userImg = "https://pbs.twimg.com/profile_images/1258966258122457088/6xmkCTOr_400x400.jpg";
-    console.log (userImg);
+    // const userImg = "https://pbs.twimg.com/profile_images/1258966258122457088/6xmkCTOr_400x400.jpg";
+    // const userImg = profile.image_url;
+    // console.log (userImg);
 
     return (
         <section className='myprofile'>
@@ -31,7 +32,7 @@ const MyProfile = () => {
             </div>
             <div className='myprofile-content grid'>
                 <div className='myprofile-img'>
-                <img src = {userImg} alt = "user" />
+                <img src = {profile.image_url} alt = "user" />
                 {/* <img src = {defaultImg} alt = "user" /> */}
                 </div>
             </div>
