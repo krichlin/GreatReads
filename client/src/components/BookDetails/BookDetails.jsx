@@ -13,7 +13,8 @@ const URL = "https://openlibrary.org/works/";
 const handleAdd = ((book) => {
   console.log("clicked add")
   //destructure book here?
-  console.log(book)
+
+  console.log("🚀 ~ handleAdd ~ book:", book)
     // Do magic POST call here to CREATE new book to db tables
     // This is where we add the book to the library.
 
@@ -24,7 +25,7 @@ const handleAdd = ((book) => {
     },
     body: JSON.stringify({
         title: book.title,
-        author: book.author[0], // authors is an array, just take the 0th entry.
+        author: book.authors, // authors is an array, just take the 0th entry.
         cover_id: book.cover_id,
         cover_img: book.cover_img,
         subjects: book.subjects,
@@ -63,12 +64,12 @@ const BookDetails = () => {
       try{
         const response = await fetch(`${URL}${id}.json`);
         const data = await response.json();
-        //console.log(data);
+        console.log(data);
 
         if(data){
           console.log(data);
-          const {description, title, covers, subject_places, subject_times, subjects} = data;
-          const authors = data.authors;
+          const {description, title, covers, subject_places, subject_times, subjects, authors} = data;
+          // const authors = data.authors;
           // destructure data into bits
           // create a newBook object with those bits, but also includes the cover URL
           const newBook = {
@@ -77,10 +78,13 @@ const BookDetails = () => {
             cover_img: covers ? `https://covers.openlibrary.org/b/id/${covers[0]}-L.jpg` : coverImg,
             subject_places: subject_places ? subject_places.join(", ") : "No subject places found",
             subject_times : subject_times ? subject_times.join(", ") : "No subject times found",
-            authors: authors ? authors.join(", ") : "No Authors Found",
+            // authors: authors ? authors.join(", ") : "No Authors Found",
+            authors: authors ? authors[1] : "No authors found",
+            
             subjects: subjects ? subjects.join(", ") : "No subjects found",
             id: id
           };
+          console.log("🚀 ~ getBookDetails ~ newBook.authors:", newBook.authors)
           setBook(newBook);
           
           console.log("🚀 ~ getBookDetails ~ newBook:", newBook)
@@ -118,17 +122,18 @@ const BookDetails = () => {
               <span className='fw-6 fs-24'>Title: {book?.title}</span>
             </div>
 
-            {/* This one doesn't render for some reason. */}
-            {/* <div className='book-details-item description'>
-              <span>{book?.description}</span>
-            </div> */}
-
             {/* Author not being passed in for some reason?  Cause it's array? */}
             <div className= 'book-details-item'>
               <span className='fw-6'>Author:</span>
-              <span className='text-italic'>{book?.author}</span>
+              <span className='text-italic'>{book?.authors}</span>
             </div>
 
+            {/* This one doesn't render for some reason. */}
+            <div className='book-details-item description'>
+              
+              <span className='fw-6'>Description:</span>
+              <span>{book?.description}</span>
+            </div>
 
             <div className='book-details-item'>
               <span className='fw-6'>Open Library OLID: </span>

@@ -238,19 +238,6 @@ function SignUpForm({ user }) {
 							/>
 						</Form.Group>
 
-						{/* <Form.Group className="mb-3">
-                        <Form.Label>Zipcode:</Form.Label>
-                        <Form.Control
-                            type='text'
-                            id='zipcode'
-                            name='zipcode'
-                            placeholder="Zipcode..."
-                            values={values.zipcode}
-                            onChange={handleChange}
-                            onBlur={handleBlur}
-                        />
-                    </Form.Group> */}
-
 						<Button
 							className="signup-form-button"
 							type="submit"
