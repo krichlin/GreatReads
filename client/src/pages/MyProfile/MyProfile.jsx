@@ -20,11 +20,12 @@ const MyProfile = () => {
     // console.log (userImg);
 
     function handleUpdate(profile){
-        useEffect(() => {
-            fetch("/myprofile")
-            .then((r) => r.json())
-            .then((profile) => setProfile(profile))
-        }, []);
+        // This doesn't like the UseEffect call.
+        // useEffect(() => {
+        //     fetch("/myprofile")
+        //     .then((r) => r.json())
+        //     .then((profile) => setProfile(profile))
+        // }, []);
     }
     function handleDelete(profile){
 
