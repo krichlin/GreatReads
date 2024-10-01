@@ -5,6 +5,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./BookListAll.css";
 
+  const handleRemove = ((book) => {
+    console.log("clicked delete book")
+    const booktoremove = book.olid;
+    console.log(booktoremove);
+
+    fetch(`http://127.0.0.1:5555/deletebook/{book.id}`,{
+      // Maybe this will work better with book.olid or booktoremove?
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // No body for delete fetch
+    })
+      .then((r) => r.json())
+      // do something with response here?
+  });
+
 const BookAll = (book) => {
   return (
     <div className='book-item flex flex-column flex-sb'>
@@ -35,6 +52,12 @@ const BookAll = (book) => {
           <span className='text-capitalize fw-7'>First Publish Year: </span>
           <span>{book.first_publish_year}</span>
         </div>
+
+        <div className='book-delete-button'>
+            <button type='button' className='flex flex-c' onClick={() => (handleRemove(book))}>CLICK HERE TO REMOVE BOOK FROM LIBRARY </button>
+              {/* this button took forever to get working, had to send it an arrow function because function was invoked not passed */}
+        </div>
+
       </div>
     </div>
   )

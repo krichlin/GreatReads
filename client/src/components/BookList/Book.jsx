@@ -8,24 +8,10 @@ import "./BookList.css";
     console.log("clicked add")
 
     //destructure book here?  
-    // const title = book.title;
-    // console.log(title);
     // console.log("🚀 ~ handleAdd ~ book:", book)
   
     // Do magic POST call here to CREATE new book to db tables
     // This is where we add the book to the library.
-    // This post call always fails, and never populates the body correctly.
-    // I don't know why.
-
-    // console.log(book.title)
-
-    // This Fetch is failing for reasons unknown.  When it gets to the server, none of the 
-    // Parameters are present.  It just says [parameters: (None, None, None, None, None, None, 
-    // [parameters: (None, None, None, None, None, None, None, None, None, None, None, None, None)]
-    // It works fine in postman though.  
-    // Ask Teacher for Help about this.  
-
-    // let's try destructuring a new dict 'bookparams' that contains only the keys and fields we need.
 
     const bookparams = {
       author: book.author[0],

@@ -156,6 +156,17 @@ def delete_user(user_id):
         db.session.rollback()
         return {'message':'Error deleting user'}, 500
 
+@app.route('/delete_book/<int:book_id>', methods = ['DELETE'])
+def delete_book(book_id):
+    book = Book.query.get_or_404(book_id)
+    try:
+        db.session.delete(book)
+        db.session.commit()
+        return {'message':'Book deleted successfully'}, 200
+    except:
+        db.session.rollback()
+        return {'message':'Error deleting book'}, 500
+
 class UserById(Resource):
     def get(self, id):
         user = db.session.get(User, id)
@@ -165,6 +176,7 @@ class UserById(Resource):
         else:
             return make_response({'error': 'User not found'}, 404)
     
+
 class AddBook(Resource):
     def post(self):
         try:
@@ -250,7 +262,6 @@ api.add_resource(Books, '/books')
 api.add_resource(BookById, '/books/<int:id>')
 api.add_resource(MyProfile, '/myprofile') 
 # api.add_resource(DeleteAccount, '/deleteaccount')
-
 # api.add_resource(MyLibrary, '/mylibrary')
 
 if __name__ == '__main__':
