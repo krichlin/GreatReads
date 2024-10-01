@@ -1,8 +1,8 @@
 // components/App.js
 
-import React, { useContext, useEffect, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { AppContext } from "../context.";
+import React, { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+// import { AppContext } from "../context.";
 import Login from './/../pages/Login/Login';
 // import { Switch, Route } from "react-router-dom";
 import Home from './/../pages/Home/Home';
@@ -11,16 +11,15 @@ import About from './/../pages/About/About';
 import BookList from './/../components/BookList/BookList';
 import BookDetails from './/../components/BookDetails/BookDetails';
 import BookListAll from './/../components/BookListAll/BookListAll';
-import SignUpForm from './/../components/SignUpForm/SignUpForm';
+// import SignUpForm from './/../components/SignUpForm/SignUpForm';
+import Signup from ".//../pages/Signup/Signup";
 import Navbar from './/../components/Navbar/Navbar';
 import MyLibrary from './/../pages/MyLibrary/MyLibrary';
 import MyProfile from './/../pages/MyProfile/MyProfile';
-import LoginForm from "./LoginForm/LoginForm";
-
+// import LoginForm from "./LoginForm/LoginForm";
 
 // const SpaceContext = createContext();
 // export const useSpace = () => useContext(SpaceContext);
-
 
 function App() {
 
@@ -48,7 +47,7 @@ function App() {
           <Route path = "/book" element = {<BookList />} />
           <Route path = "/book/:id" element = {<BookDetails />} /> 
           <Route path = "/showall" element = {<BookListAll />} />
-          {/* <Route path = "/signup" element = {<SignUpForm />} /> */}
+          <Route path = "/signup" element = {<Signup />} /> */}
           <Route path = "/mylibrary" element = {<MyLibrary />} />
           <Route path = "/myprofile" element = {<MyProfile />} />
         </Route>

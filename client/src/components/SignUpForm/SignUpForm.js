@@ -1,7 +1,7 @@
 // src/components/SignUpForm/SignUpForm.js
 
-import React, { useState, useContext } from "react";
-import { AppContext } from "../../context.";
+import React from "react";
+// import { AppContext } from "../../context.";
 import { useNavigate } from "react-router-dom";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -10,12 +10,12 @@ import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 // import { Button, Error, Input, FormField, Label, Textarea } from "../../styles";
 // This button replaced the other one we were using previously
-import { Error, Input, FormField, Label, Textarea } from "../../styles";
+// import { Error, Input, FormField, Label, Textarea } from "../../styles";
 
 function SignUpForm({ user }) {
 	const navigate = useNavigate();
-	  const useAppContext = () => useContext(AppContext);
-	  const { setUser } = useAppContext();
+	//   const useAppContext = () => useContext(AppContext);
+	//   const { setUser } = useAppContext();
 
 	const validationSchema = yup.object().shape({
 		f_name: yup.string(),
@@ -85,8 +85,6 @@ function SignUpForm({ user }) {
 			});
 		setSubmitting(false);
 	}
-
-
 
 	return (
 		<Container className="signup-form-container">
@@ -239,19 +237,16 @@ function SignUpForm({ user }) {
 							/>
 						</Form.Group>
 
-						<Button
-							className="signup-form-button"
-							type="submit"
-							variant="success"
-						>
-							Submit
+						<Button className="signup-form-button" type="submit" variant="success">
+							<h2>SUBMIT</h2>
 						</Button>
 					</Form>
 				)}
 			</Formik>
 			<br></br>
-			<div className="login-redirect-from-signup">
+			{/* <div className="login-redirect-from-signup">
 				Already have an account? &nbsp;
+				
 				<Button
 					className="route-to-login"
 					variant="success"
@@ -259,7 +254,7 @@ function SignUpForm({ user }) {
 				>
 					Log In
 				</Button>
-			</div>
+			</div> */}
 		</Container>
 	);
 }

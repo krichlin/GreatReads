@@ -92,17 +92,24 @@ We use the [OpenLibrary API](http://openlibrary.org/developers/api).
 ## Packages Used
 
 ### Frontend Packages (JavaScript and React)
+* React JS - a JavaScript language for building user interfaces.
 * React Router - To integrate navigation in a single page web app.
 * React Icons - For pretty buttons
 * React Bootstrap - For Styling
-* useContext for user state management
+* HTML - the standard markup language for documents designed to be displayed in a web browser.
+* CSS - A stylesheet language used for desribing the look and formatting of an HTML document.
 * Formik - For Login and Signup forms
 * Yup - For Validation and Error Handling of login and signup
 
 ### Backend Packages (Python and Flask)
-* SQLAlchemy 
-* Flask RESTful
+* Python - A high-level, interpreted programming language.
+* Flask - A micro web framework written in Python.
+* SQLite3 - A C library that provides a lightweight disk-based database
+* PostgreSQL - A powerful, open-source object-relational database system
+* SQLAlchemy - Libraries to help implmenent ORM between Python and SQLite.
+* Flask RESTful API - An architectural style for an API that uses HTTP requests to access and use data
 * Bcrypt - Password encryption and salting
+* python-dotenv - A python module to manage environment variables to support deployment.
 
 ## Screenshots
 
@@ -124,3 +131,26 @@ We use the [OpenLibrary API](http://openlibrary.org/developers/api).
 ### Front End
 - In a new terminal window, enter the client directory and type `npm install` to install necessary packages.
 - To Launch, Open a new termainl window, enter the client directory and type `npm start` 
+
+## Future Improvements
+
+## Feedback
+
+We are very interested in hearing your feedback!  Please drop any notes you have for us
+in our Github Project page.
+
+## Project Notes
+
+GreatReads began as a final capstone project for Flatiron School's Full Time Software Engineering course.
+It is written by Ken Richlin with the help of his teachers and advisors at Flatiron.  This project is not
+yet 100% complete, however all the current features are functional.  I have many ideas on how to improve
+the user's experience, and hope to bring you more functionality soon!
+
+## Contributions
+
+GreatReads is provided free to the public by the MIT Open License.  We are not seeking any contributions,
+as the purpose of the project is to continue to increase my programming skills.  
+
+## Contact
+
+Find me on Linkedin

@@ -2,7 +2,7 @@
 
 import { React, useEffect, useState } from 'react';
 import "./MyProfile.css";
-import defaultImg from "../../images/pikachu.png";
+// import defaultImg from "../../images/pikachu.png";
 
 const MyProfile = () => {
     const [profile, setProfile] = useState([]);
@@ -20,7 +20,7 @@ const MyProfile = () => {
     // console.log (userImg);
 
     function handleUpdate(profile){
-        // This doesn't like the UseEffect call.
+        // This doesn't like the UseEffect call.  Maybe just jump right to the fetch, since it's already OnClick?
         // useEffect(() => {
         //     fetch("/myprofile")
         //     .then((r) => r.json())
@@ -47,8 +47,8 @@ const MyProfile = () => {
             <div className='myprofile-text'>
                 <h2 className='myprofile-title fs-26 ls-1'>About Me</h2>
                 <p className='fs-17'>{profile.bio}</p>
-                <h2 className ='myprofile-title fs-26 ls-1'>Click Here to Update Bio </h2>
-                <h2 className='myprofile-title fs-26 ls-1'>Click Here to Delete Account</h2>
+                {/* <h2 className ='myprofile-title fs-26 ls-1'>Click Here to Update Bio </h2>
+                <h2 className='myprofile-title fs-26 ls-1'>Click Here to Delete Account</h2> */}
                 <div className='book-add-button'>
                     <button type='button' className='flex flex-c' onClick={() => (handleUpdate(profile))}>CLICK HERE TO UPDATE PROFILE </button>
                 </div>
