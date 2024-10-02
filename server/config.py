@@ -32,7 +32,7 @@ except Exception:
     print("secret key not found")
 
 # app = Flask(__name__)
-app.secret_key = b'p\x92r/o\xef6k\xe3\x82\xab\xf8Pb\xf3S'
+# app.secret_key = b'p\x92r/o\xef6k\xe3\x82\xab\xf8Pb\xf3S'
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 # app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(DATABASE_URI)
