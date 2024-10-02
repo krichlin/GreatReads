@@ -9,6 +9,7 @@ from flask_restful import Resource
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 from flask_migrate import Migrate
+from dotenv import load_dotenv
 
 
 # from flask_jwt_extended import create_access_token, jwt_required
@@ -26,6 +27,8 @@ from config import app, db, api
 # Envioronmental stuff for deployment
 # from dotenv import load_dotenv
 # load_dotenv()
+
+load_dotenv()
 
 # Routes Go Here
 
