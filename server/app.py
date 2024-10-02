@@ -243,8 +243,6 @@ class BookById(Resource):
         else:
             return make_response({"error": "Book not found"}, 404)
 
-
-
 # class MyLibrary(Resource):
 #     def get(self,id):
 #         books = 
