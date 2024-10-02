@@ -52,15 +52,9 @@ function App() {
           <Route path = "/myprofile" element = {<MyProfile />} />
         </Route>
       </Routes>
-      {/* Show My Library Here Once It's Working  */}
     </>
   )
 }
 
 export default App;
-  // return (
-  //   <>
-  //     <Header/>
-  //     {/* <Home/> */}
-  //   </>
-  // )
+

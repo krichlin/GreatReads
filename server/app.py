@@ -5,11 +5,10 @@
 
 # Remote library imports
 from flask import Flask, request, jsonify, session, make_response, render_template
-from flask_restful import Resource
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.exc import IntegrityError
-from flask_migrate import Migrate
-from dotenv import load_dotenv
+from flask_restful import Resource, Api
+# from flask_sqlalchemy import SQLAlchemy
+# from sqlalchemy import IntegrityError
+# from flask_migrate import Migrate
 
 
 # from flask_jwt_extended import create_access_token, jwt_required
@@ -17,7 +16,8 @@ from dotenv import load_dotenv
 # from sqlalchemy.exc import IntegrityError
 
 # Add your model imports
-from models import User, Book, Library, Bookgenre, Genre, Review
+# from models import User, Book, Library, Bookgenre, Genre, Review
+from models import User, Book
 # import pytesseract
 # import base64
 
@@ -26,16 +26,6 @@ from config import app, db, api
 
 # Envioronmental stuff for deployment
 # from dotenv import load_dotenv
-# load_dotenv()
-
-load_dotenv()
-
-app = Flask(
-    __name__,
-    static_url_path=''
-    # static_folder='../client/build',
-    # template_folder='..client/build'
-)
 
 # Routes Go Here
 

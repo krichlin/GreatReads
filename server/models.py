@@ -19,10 +19,6 @@ from config import db, bcrypt
 
 # Models go here!
 
-
-
-
-
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'
 

@@ -15,13 +15,7 @@ function SignUp() {
                 <h1 className="signup-header">Welcome to GreatReads!</h1>
                 <h4 className="signup-title">Please use the form below to sign up!</h4>
                 <SignUpForm />
-                {/* <p>
-                    Already Have an Account?  &nbsp;
-                    Click Here to Login
-                    {/* <Button color="secondary" onClick={() => setShowLogin(true)}>
-                    Log In
-                    </Button> */}
-                {/* </p> */}
+
             </main>
         </Wrapper>
     )

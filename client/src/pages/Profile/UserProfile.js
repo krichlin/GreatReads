@@ -11,7 +11,7 @@ function UserProfile() {
     // console.log(params);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/users/${userId}`)
+        fetch(`http://localhost:8000/users/${userId}`)
         .then(r => r.json())
         .then(data => setUser(data))
         .catch(error => console.error(error));

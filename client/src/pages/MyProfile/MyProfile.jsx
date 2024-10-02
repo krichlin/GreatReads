@@ -7,7 +7,7 @@ import "./MyProfile.css";
 const MyProfile = () => {
     const [profile, setProfile] = useState([]);
     useEffect(() => {
-        // fetch("http://127.0.0.1:5555/myprofile")
+        // fetch("http://127.0.0.1:8000/myprofile")
         fetch("/myprofile")
         .then((r) => r.json())
         .then((profile) => setProfile(profile))

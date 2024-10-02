@@ -19,7 +19,7 @@ const BookListAll = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        // fetch("http://127.0.0.1:5555/allbooks")
+        // fetch("http://127.0.0.1:8000/allbooks")
         fetch("/allbooks")
         .then((r) => r.json())
         .then((books) => setBooks(books))
