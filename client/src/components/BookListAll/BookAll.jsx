@@ -10,7 +10,7 @@ import "./BookListAll.css";
     const booktoremove = book.olid;
     console.log(booktoremove);
 
-    fetch(`http://127.0.0.1:5555/deletebook/{book.id}`,{
+    fetch(`http://127.0.0.1:5555/delete_book/${book.id}`,{
       // Maybe this will work better with book.olid or booktoremove?
       method: "DELETE",
       headers: {

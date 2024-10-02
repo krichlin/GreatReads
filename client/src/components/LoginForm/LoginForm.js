@@ -7,8 +7,8 @@ function LoginForm({ user, setUser }) {
   
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState([]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -23,7 +23,8 @@ function LoginForm({ user, setUser }) {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((data) => setUser(data));
-      } else {
+      } 
+      else {
         r.json().then((err) => setErrors(err.errors));
       }
     });
@@ -32,7 +33,7 @@ function LoginForm({ user, setUser }) {
   return (
     <form onSubmit={handleSubmit}>
       <FormField>
-        <Label htmlFor="username">Username</Label>
+        <Label htmlFor="username">Username - Pikachu</Label>
         <Input
           type="text"
           id="username"
@@ -42,7 +43,7 @@ function LoginForm({ user, setUser }) {
         />
       </FormField>
       <FormField>
-        <Label htmlFor="password">Password</Label>
+        <Label htmlFor="password">Password - Pikachu123!</Label>
         <Input
           type="password"
           id="password"
@@ -57,9 +58,9 @@ function LoginForm({ user, setUser }) {
         </Button>
       </FormField>
       <FormField>
-        {/* {errors.map((err) => (
+        {errors.map((err) => (
           <Error key={err}>{err}</Error>
-        ))} */}
+        ))}
       </FormField>
     </form>
   );
