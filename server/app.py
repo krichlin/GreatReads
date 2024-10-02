@@ -32,11 +32,34 @@ load_dotenv()
 
 app = Flask(
     __name__,
-    static_url_path='',
-    static_folder='../client/build',
-    template_folder='..client/build'
+    static_url_path=''
+    # static_folder='../client/build',
+    # template_folder='..client/build'
 )
+
 # Routes Go Here
+
+@app.route("/")
+def helloWorld():
+    return ('<h1>Welcome to the GreatReads Project Server</h1><p>Good things to ask for might be:</p><p>signup login logout allbooks user addbook books check_session</p>');
+
+@app.route("/api/v1/users")
+def list_users():
+  return "user example"
+
+# @app.route("/")
+# @cross_origin()
+# def howdy():
+#   return "Howdy partner!"
+
+# @app.route("/")
+# @cross_origin()  # Has a problem with this line
+# def hiWorld():
+#   return "Hi, Cross origin world!"
+
+# To Enable CORS Logging Do this:
+# logging.getLogger('flask_cors').level = logging.DEBUG
+
 
 @app.errorhandler(404)
 def not_found(e):
@@ -49,9 +72,9 @@ def not_found(e):
 #         and request.endpoint != 'document_list' :
 #         return {'error': 'Unauthorized'}, 401
 
-@app.route('/')
-def index():
-    return 'Welcome to the GreatReads Server!'
+# @app.route('/')
+# def index():
+#     return 'Welcome to the GreatReads Server!'
 
 @app.route('/firstbook')
 def firstbook():
