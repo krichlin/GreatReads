@@ -6,7 +6,8 @@ import "./Navbar.css";
 import logoImg from "../../images/logo.png";
 import Button from "./Button";
 
-import {HiOutlineLogout, HiOutlineMenuAlt3} from "react-icons/hi";
+// import {HiOutlineLogout, HiOutlineMenuAlt3} from "react-icons/hi";
+import {HiOutlineMenuAlt3} from "react-icons/hi";
 
 const Navbar = ({ user, setUser }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
