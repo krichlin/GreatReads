@@ -1,0 +1,24 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+ipdb = "0.13.9"
+flask = "*"
+flask-sqlalchemy = "*"
+Werkzeug = "2.2.2"
+flask-migrate = "*"
+flask-restful = "*"
+sqlalchemy-serializer = "*"
+flask-cors = "*"
+faker = "15.3.2"
+pytest = "7.2.0"
+importlib-metadata = "6.0.0"
+importlib-resources = "5.10.0"
+flask-bcrypt = "1.0.1"
+gunicorn = "*"
+psycopg2-binary = "*"
+
+[requires]
+python_full_version = "3.8.13"
