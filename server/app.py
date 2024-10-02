@@ -6,7 +6,8 @@
 # Remote library imports
 from flask import Flask, request, jsonify, session, make_response, render_template
 from flask_restful import Resource, Api
-# from flask_sqlalchemy import SQLAlchemy
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.exc import IntegrityError
 # from sqlalchemy import IntegrityError
 # from flask_migrate import Migrate
 
@@ -15,15 +16,16 @@ from flask_restful import Resource, Api
 # from werkzeug.security import generate_password_hash, check_password_hash
 # from sqlalchemy.exc import IntegrityError
 
-# Add your model imports
+
 # from models import User, Book, Library, Bookgenre, Genre, Review
-from models import User, Book
+
 # import pytesseract
 # import base64
 
 # Local imports
 from config import app, db, api
-
+# Add your model imports
+from models import User, Book
 # Envioronmental stuff for deployment
 # from dotenv import load_dotenv
 
