@@ -7,25 +7,21 @@ from flask import json
 from random import randint, choice as rc
 
 # Remote library imports
-from faker import Faker
 
 # Local imports
 from app import app
 from models import db, User, Book
 
 if __name__ == '__main__':
-    fake = Faker()
+
     with app.app_context():
         print("Starting seed...")
 
         # Reset All Tables in Database, if they exist
-        Book.query.delete()
+        # Book.query.delete()
         # User.query.delete()   
-        
-        # seed file no longer deletes the user table.  Oops
-
+    
         # Seed Some Sample Books 
-
         books = [
             Book(
                 author='Arthur Conan Doyle',
@@ -72,45 +68,5 @@ if __name__ == '__main__':
         # Populate Books to database
         print("Seeding Books")
         db.session.add_all(books)
-
-        # Make Some Fake Users
-
-        # users = [
-        #     User(
-        #         username='HarryPotter',
-        #         email='HarryPotter@hogworts.edu',
-        #         bio='Hello, I am Harry Potter.  Pleased to meet you.',
-        #         f_name='Harry',
-        #         l_name='Potter',
-        #         _password_hash="password123!",
-        #         image_url='https://static.wikia.nocookie.net/neoencyclopedia/images/4/44/HarryPotter5poster.jpg'
-        #     ),
-        #     User(
-        #         username='HermioneGranger',
-        #         email='HermioneGranger@hogworts.edu',
-        #         bio='I am Hermione Grainger.  I like books about magic.',
-        #         f_name='Hermione',
-        #         l_name='Granger',
-        #         _password_hash="password321!",
-        #         image_url='https://i0.wp.com/the-art-of-autism.com/wp-content/uploads/2022/12/Hermione-Granger.jpg'
-        #     ),
-        #     User(
-        #         username='AlbusDumbledore',
-        #         email='Headmaster@hogworts.edu',
-        #         bio='I am the Headmaster of Hogworts School of Witchcraft and Wizardry.',
-        #         f_name='Albus',
-        #         l_name='Dumbledore',
-        #         _password_hash='password456!',
-        #         image_url='https://static.wikia.nocookie.net/100gamesvictorfanficstories/images/a/ac/Albus_Dumbledore.jpg'
-        #     ),
-            # User(
-            #     username='krichlin',
-            #     email='krichlin@gmail.com',
-            #     bio="Hi I'm Ken I'm into Reading and Magic!",
-            #     f_name='Ken',
-            #     l_name='Richlin',
-            #     _password_hash='Obliter8!',
-            #     image_url='https://media.licdn.com/dms/image/C5603AQH6PkKUrbzJ4w/profile-displayphoto-shrink_200_200/0/1625325706900?e=2147483647&v=beta&t=pdWFc6dtEy_QW5S8cyGmER2jLIm-tiOp7R9u2HZl38E'
-            # ),
 
         db.session.commit()

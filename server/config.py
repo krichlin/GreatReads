@@ -1,7 +1,5 @@
 # server/config.py
 
-# Standard library imports
-
 # Remote library imports
 from flask import Flask
 from flask_bcrypt import Bcrypt
@@ -43,16 +41,3 @@ def helloWorld():
 @app.route("/api/v1/users")
 def list_users():
   return "user example"
-
-# @app.route("/")
-# @cross_origin()
-# def howdy():
-#   return "Howdy partner!"
-
-# @app.route("/")
-# @cross_origin()  # Has a problem with this line
-# def hiWorld():
-#   return "Hi, Cross origin world!"
-
-# To Enable CORS Logging Do this:
-# logging.getLogger('flask_cors').level = logging.DEBUG

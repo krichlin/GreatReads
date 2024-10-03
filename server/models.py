@@ -11,17 +11,7 @@ from sqlalchemy import MetaData
 # local imports
 from config import db, bcrypt
 
-# This stuff was moved to Config
-# metadata = MetaData(naming_convention={
-#     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
-# })
-# db = SQLAlchemy(metadata=metadata)
-
 # Models go here!
-
-
-
-
 
 class User(db.Model, SerializerMixin):
     __tablename__ = 'users'

@@ -1,42 +1,26 @@
 #!/usr/bin/env python3
 # server/app.py
 
-# Standard library imports
-
-# Remote library imports
 from flask import Flask, request, jsonify, session, make_response, render_template
 from flask_restful import Resource
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError
 from flask_migrate import Migrate
 
-
-# from flask_jwt_extended import create_access_token, jwt_required
-# from werkzeug.security import generate_password_hash, check_password_hash
-# from sqlalchemy.exc import IntegrityError
-
-# Add your model imports
+# model imports
 from models import User, Book, Library, Bookgenre, Genre, Review
 
-# Local imports
+# local imports
 from config import app, db, api
 
-# Envioronmental stuff for deployment
+# Envioronmental stuff for deployment goes here
 # from dotenv import load_dotenv
 # load_dotenv()
 
 # Routes Go Here
-
 @app.errorhandler(404)
 def not_found(e):
     return render_template("index.html")
-
-# This is dubious for some reason.
-# @app.before_request
-# def check_if_logged_in():
-#     if not session['user_id']
-#         and request.endpoint != 'document_list' :
-#         return {'error': 'Unauthorized'}, 401
 
 @app.route('/')
 def index():
@@ -195,7 +179,7 @@ class AddBook(Resource):
 
             db.session.add(booktoadd)
 
-            # Do something more here to add this book to the current user's library? before returning?  Link it to user's session ID?
+            # Do something more here to add this book to the current user's library before returning by linking it to user's session ID?
 
             db.session.commit()
 
@@ -240,12 +224,6 @@ class BookById(Resource):
             return make_response({"message": "Book deleted successfully."}, 204)
         else:
             return make_response({"error": "Book not found"}, 404)
-
-
-
-# class MyLibrary(Resource):
-#     def get(self,id):
-#         books = 
 
 api.add_resource(Home, '/')
 api.add_resource(CheckSession, '/check_session')
