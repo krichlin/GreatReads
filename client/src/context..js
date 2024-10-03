@@ -2,7 +2,7 @@
 
 // This file is home to the global context, and where we do API call to open library
 
-import React, {useState, useContext, useEffect, createContext } from 'react';
+import React, {useState, useContext, useEffect} from 'react';
 import { useCallback } from 'react';
 const URL = "http://openlibrary.org/search.json?title=";  // this is the root URL for the API search
 
@@ -18,6 +18,8 @@ const AppProvider = ({children}) => {
     const [books, setBooks] = useState([]);
     const [loading, setLoading] = useState(true);
     const [resultTitle, setResultTitle] = useState("");
+    console.log(user);
+    console.log(setUser);
 
     const fetchBooks = useCallback(async() => {
         setLoading(true);

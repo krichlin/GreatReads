@@ -6,7 +6,8 @@ import "./Navbar.css";
 import logoImg from "../../images/logo.png";
 import Button from "./Button";
 
-import {HiOutlineLogout, HiOutlineMenuAlt3} from "react-icons/hi";
+import {HiOutlineMenuAlt3} from "react-icons/hi";
+// import {HiOutlineLogout, HiOutlineMenuAlt3} from "react-icons/hi";
 
 const Navbar = ({ user, setUser }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -24,8 +25,11 @@ const Navbar = ({ user, setUser }) => {
   } 
 
   return (
-    <nav className='navbar' id = "navbar">
+    <nav className='navbar' id = "navbar">  
+
+      {/* here we apply flex class to the container div */}
       <div className='container navbar-content flex'>
+
         <div className='brand-and-toggler flex flex-sb'>
           <Link to = "/" className='navbar-brand flex'>
             <img src = {logoImg} alt = "site logo" />
@@ -49,9 +53,6 @@ const Navbar = ({ user, setUser }) => {
             <li className='nav-item'>
               <Link to = "showall" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>showall</Link>
             </li>
-            {/* <li className='nav-item'>
-              <Link to = "logout" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>logout</Link>
-            </li> */}
             <li className='nav-item'>
               <Link to = "login" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>login</Link>
             </li>
@@ -65,9 +66,7 @@ const Navbar = ({ user, setUser }) => {
               <Link to = "myprofile" className='nav-link text-uppercase text-white fs-22 fw-6 ls-1'>my profile</Link>
             </li>
             <li className='nav-item'>
-              <Button variant="outline" onClick={handleLogoutClick}>
-                Logout
-              </Button>
+              <Button variant="outline" onClick={handleLogoutClick}> Logout </Button>
             </li>
           </ul>
         </div>

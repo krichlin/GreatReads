@@ -17,8 +17,6 @@ from flask_migrate import Migrate
 
 # Add your model imports
 from models import User, Book, Library, Bookgenre, Genre, Review
-import pytesseract
-import base64
 
 # Local imports
 from config import app, db, api

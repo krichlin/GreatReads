@@ -120,17 +120,14 @@ We use the [OpenLibrary API](http://openlibrary.org/developers/api).
 ## Setup Instructions
 
 ### Back End
-- To initialize the environment, enter the server directory, and type `pipenv install && pipenv shell`
-- Enable bcrypt by typing `pip install flask-bcrypt` (May not be necessary if requirements set correctly?)
-- Don't forget to `import validators` (May not be necessary if requirements set correctly?)
+- To install packages and start the virtual environment, type `pipenv install && pipenv shell`
 - Upgrade the db by typing `flask db upgrade head`
-- Populate the db with some test data by running `python seed.py` (maybe move this to config script to skip this step when we deploy?)
-- For deployment code only, don't forget to run `pip install python-dotenv` to set up the enviornment.
+- Populate the db with some test data by running `python server/seed.py` (maybe move this to config script to skip this step when we deploy?)
 - Start the server by typing `python server/app.py` (change this after deployment)
 
 ### Front End
 - In a new terminal window, enter the client directory and type `npm install` to install necessary packages.
-- To Launch, Open a new termainl window, enter the client directory and type `npm start` 
+- To Launch, Open a new terminal window, enter the client directory and type `npm start` 
 
 ## Future Improvements
 
